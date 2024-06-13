@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.board.mapper.BoardMapper">
+	<insert id="boardWrite" parameterType="com.smhrd.board.model.Board">
+	<!-- BoardMapper.java의 메서드 이름과 동일하게 -->
+		insert into board (title, content, writer, img) 
+		values (#{title}, #{content}, #{writer}, #{img});
+	</insert>
+	
+	<!-- 4. 쿼리문 작성 -->
+	<select id="boardContent" resultType="com.smhrd.board.model.Board">
+		select * from board where idx=#{idx};
+		<!-- mapper에서 넘겨 받은 idx가 조건이 됨!
+		넘겨받는게 한 개뿐이라 idx 라고 안 적어도 되긴 하지만 편의상 적음-->
+	
+	
+	</select>
+  
+  
+</mapper>
