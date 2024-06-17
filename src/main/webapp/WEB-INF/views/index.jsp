@@ -11,6 +11,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="resources/css/main.css" />
+		
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -34,29 +35,8 @@
 
 				</div>
 
-			<!-- Banner -->
-				<section id="banner">
-					
-				</section>
-
-			<!-- Highlights -->
 				<section class="wrapper style1">
-					
-				</section>
-
-			<!-- Gigantic Heading -->
-				<section class="wrapper style2">
-					
-				</section>
-
-			<!-- Posts -->
-				<section class="wrapper style1">
-					
-				</section>
-
-			<!-- CTA -->
-				<section id="cta" class="wrapper style3">
-					
+				
 				</section>
 
 			<!-- Footer -->
@@ -96,6 +76,10 @@
 			<script src="resources/js/breakpoints.min.js"></script>
 			<script src="resources/js/util.js"></script>
 			<script src="resources/js/main.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+			<script type="text/javascript"
+        			src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=96fa0336ba0e9190eea3854401eb131e&libraries=clusterer"></script>
 
 	</body>
 </html>
