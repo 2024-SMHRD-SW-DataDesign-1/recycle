@@ -1,4 +1,4 @@
-package com.smhrd.board.converter;
+package com.smhrd.recycle.converter;
 
 import java.io.File;
 import java.io.IOException;

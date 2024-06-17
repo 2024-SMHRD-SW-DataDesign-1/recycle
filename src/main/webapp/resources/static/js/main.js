@@ -27,10 +27,10 @@
 		        result += "<tr>";
 		        result += "<td>"+ cnt++ +"</td>";
 		        									// 배열인 게시물의 idx ...
-		        result += "<td><a href='board/content/"+vo.idx+"'>"+vo.title+"</a></td>";
-		        result += "<td>"+vo.writer+"</td>";
-		        result += "<td>"+vo.indate+"</td>";
-		        result += "<td><button class='btn btn-warning btn-sm' onclick='goDelete("+vo.idx+")'>삭제</button></td>"
+		        result += "<td><a href='recycle/list"+vo.address+"'>"+vo.latitude+"</a></td>";
+		        result += "<td>"+vo.longitude+"</td>";
+		        result += "<td>"+vo.cr_day+"</td>";
+		        result += "<td><button class='btn btn-warning btn-sm' onclick='goDelete("+vo.address+")'>삭제</button></td>"
 		        result += "</tr>";
 		      })
 		      $("#list").html(result) //id가 list인 곳에 html 구조인 result를 추가하겠다 라는 의미
