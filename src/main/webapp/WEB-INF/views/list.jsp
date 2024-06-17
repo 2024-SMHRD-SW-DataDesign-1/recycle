@@ -18,7 +18,7 @@
 </head>
 <body>
 	
-	<button onclick="set1()">분리수거</button>
+	<button onclick="set()">분리수거</button>
 
 	<div id="map" style="width:100%;height:350px;"></div> 
 
@@ -114,7 +114,7 @@
 		}
 		
 		
-		function set1(){ //분리수거함
+		function set(){ //분리수거함
 			
 			console.log(markerArr1)
 			
