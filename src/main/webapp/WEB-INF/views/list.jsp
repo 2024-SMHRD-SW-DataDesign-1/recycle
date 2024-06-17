@@ -42,18 +42,23 @@
 			</nav>
 		</div>
 
-		<button onclick="set()">분리수거</button>
+		<button onclick="trash_btn()">분리수거</button>
+		<button onclick="lamp_btn()">폐형광등</button>
 
-		<div id="map" style="width: 100%; height: 350px;"></div>
+		<div id="map" style="width: 100%; height: 600px;"></div>
 
 
 		<script type="text/javascript">
 			$(document).ready(function() {
-				loadList()
+				loadList1()
 			})
 
-			var markerArr1 = []; //분리수거함 마커
-			var markerArr2 = []; //폐건전지함 마커
+			$(document).ready(function() {
+				loadList2()
+			})
+
+			var trashArr1 = []; //분리수거함 마커
+			var lampArr2 = []; //폐형광등함 마커
 
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			mapOption = {
@@ -66,13 +71,15 @@
 			// 지도를 생성한다 
 			var map = new kakao.maps.Map(mapContainer, mapOption);
 
-			function loadList() {
+			/////////////////////////////////////////////////////////////////지도 띄우는 코드
+
+			function loadList1() { ////////////////////////////////json 파일로 분리수거 데이터 가져오는 함수
 				// 게시물 전체 데이처 요청하는 함수 (비동기 통신)
 				$.ajax({
 					url : "trash", //요청 경로
 					type : "get", //요청 방식 (get/post)
 					dataType : "json",
-					success : listView,
+					success : listView1,
 					//성공했을 때 응답이 일어나는 데이터를 함수()에 임의적으로 지정
 					// 즉 data는 서버에서 응답한 데이터임
 					// data에는 테이블 형태의 html를 넣겠다 라고 한 listView 함수를 호출한 거임
@@ -86,7 +93,29 @@
 
 			}
 
-			function listView(res) {
+			function loadList2() { ////////////////////////////////json 파일로 폐형광등 데이터 가져오는 함수
+				// 게시물 전체 데이처 요청하는 함수 (비동기 통신)
+				$.ajax({
+					url : "lamp", //요청 경로
+					type : "get", //요청 방식 (get/post)
+					dataType : "json",
+					success : listView2,
+					//성공했을 때 응답이 일어나는 데이터를 함수()에 임의적으로 지정
+					// 즉 data는 서버에서 응답한 데이터임
+					// data에는 테이블 형태의 html를 넣겠다 라고 한 listView 함수를 호출한 거임
+
+					error : function() {
+						alert("통신 실패")
+					}
+				// 콘솔창에 network 들어가서 Request URL 확인해야함! why? 비동기 통신이라!!!
+
+				})
+
+			}
+
+			////////////////////////////////////////////// 분리수거함 폐형광등 마커 띄우기
+
+			function listView1(res) {
 
 				for (var i = 0; i < res.length; i++) {
 					console.log(res[i].latitude + ',' + res[i].longitude)
@@ -125,27 +154,96 @@
 					// 마커 이미지 
 					});
 
-					markerArr1.push(marker) //  각 마커 리스트에 마커 추가
+					trashArr1.push(marker) //  각 마커 리스트에 마커 추가
 
 					marker.setMap(null)
 					//marker.setMap(map)
-					console.log(markerArr1)
+					console.log(trashArr1)
 				}
 
 			}
 
-			function set() { //분리수거함
+			///////////////////////////////////////////////////////////////////////// 폐형광등 마커 띄우기
 
-				console.log(markerArr1)
+			function listView2(res) {
 
-				for (var i = 0; i < markerArr1.length; i++) {
-					markerArr1[i].setMap(map)
+				for (var i = 0; i < res.length; i++) {
+					console.log(res[i].latitude + ',' + res[i].longitude)
+				}
+
+				var positions = []
+				for (var i = 0; i < res.length; i++) {
+					var position = {
+						title : '테스트',
+						latlng : new kakao.maps.LatLng(res[i].latitude,
+								res[i].longitude)
+					}
+					positions.push(position)
+				}
+
+				console.log(positions)
+
+				// 마커 이미지의 이미지 주소입니다
+				var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+				for (var i = 0; i < positions.length; i++) {
+
+					// 마커 이미지의 이미지 크기 입니다
+					var imageSize = new kakao.maps.Size(24, 35);
+
+					// 마커 이미지를 생성합니다    
+					var markerImage = new kakao.maps.MarkerImage(imageSrc,
+							imageSize);
+
+					// 마커를 생성합니다
+					var marker = new kakao.maps.Marker({
+						map : map, // 마커를 표시할 지도
+						position : positions[i].latlng, // 마커를 표시할 위치
+						title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+						image : markerImage
+					// 마커 이미지 
+					});
+
+					lampArr2.push(marker) //  각 마커 리스트에 마커 추가
+
+					marker.setMap(null)
+					//marker.setMap(map)
+					console.log(lampArr2)
+				}
+
+			}
+
+			
+			
+			
+			function trash_btn() { //분리수거함 버튼 누를 시 본인 마커만 띄우기
+
+				console.log(trashArr1)
+
+				for (var i = 0; i < trashArr1.length; i++) {
+					trashArr1[i].setMap(map)
 
 					//marker.setMap(map)
 				}
 
-				for (var i = 0; i < markerArr2.length; i++) {
-					markerArr2[i].setMap(null)
+				for (var i = 0; i < lampArr2.length; i++) {
+					lampArr2[i].setMap(null)
+				}
+
+			}
+
+			function lamp_btn() { //폐형광등 버튼 누를 시 본인 마커만 띄우기
+
+				console.log(lampArr2)
+
+				for (var i = 0; i < trashArr1.length; i++) {
+					trashArr1[i].setMap(null)
+
+					//marker.setMap(map)
+				}
+
+				for (var i = 0; i < lampArr2.length; i++) {
+					lampArr2[i].setMap(map)
 				}
 
 			}

@@ -25,6 +25,11 @@ public class recycleService {
 	public List<recycle> trashList() {
 		return mapper.trashList();
 	}
+	
+	//homecontroller에서 리스트 만들어서 게시판에 작성된 거 다 보이게,.
+	public List<recycle> lampList() {
+		return mapper.lampList();
+	}
 
 //	public Board boardContent(int idx) {
 //		return mapper.boardContent(idx); 
