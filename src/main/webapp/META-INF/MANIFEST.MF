@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: ggg
-=======
-Built-By: smhrd
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDesign-1/recycle.git
 Build-Jdk: 11.0.22
 Created-By: Maven Integration for Eclipse
 
