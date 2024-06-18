@@ -22,30 +22,45 @@ public class RecycleRestController {
 	// 응답하는 데이터에 대한 인코딩 방식 지정
 	@RequestMapping(value="/trash", method=RequestMethod.GET, produces = "application/text; charset=UTF-8") // 콘솔창의 네트워크에서 본 경로로 설정
 	public @ResponseBody String trashList() throws JsonProcessingException {
-		System.out.println(1);
 		List<recycle> list = service.trashList();
-		System.out.println(2);
-		// ***** 게시물 정보를 가지고 있는 list 데이터를 응답 (xml, json** {key:value})
-		// JAVA 객체 -> JSON 형태의 문자열로 변환 => Jackson 라이브러리 (디펜던시에 설치함)
 		ObjectMapper om = new ObjectMapper(); //Jackson 에서 지원하는 도구
-		System.out.println(3);
 		String jsonString = om.writeValueAsString(list); //변환하고 싶은 객체를 () 안에 넘겨주면 됨
-		System.out.println(4);
 		
 		return jsonString;
 	}
 	
 	@RequestMapping(value="/lamp", method=RequestMethod.GET, produces = "application/text; charset=UTF-8") // 콘솔창의 네트워크에서 본 경로로 설정
 	public @ResponseBody String lampList() throws JsonProcessingException {
-		System.out.println(1);
 		List<recycle> list = service.lampList();
-		System.out.println(2);
-		// ***** 게시물 정보를 가지고 있는 list 데이터를 응답 (xml, json** {key:value})
-		// JAVA 객체 -> JSON 형태의 문자열로 변환 => Jackson 라이브러리 (디펜던시에 설치함)
 		ObjectMapper om = new ObjectMapper(); //Jackson 에서 지원하는 도구
-		System.out.println(3);
 		String jsonString = om.writeValueAsString(list); //변환하고 싶은 객체를 () 안에 넘겨주면 됨
-		System.out.println(4);
+		
+		return jsonString;
+	}
+	
+	@RequestMapping(value="/battery", method=RequestMethod.GET, produces = "application/text; charset=UTF-8") // 콘솔창의 네트워크에서 본 경로로 설정
+	public @ResponseBody String batteryList() throws JsonProcessingException {
+		List<recycle> list = service.batteryList();
+		ObjectMapper om = new ObjectMapper(); //Jackson 에서 지원하는 도구
+		String jsonString = om.writeValueAsString(list); //변환하고 싶은 객체를 () 안에 넘겨주면 됨
+		
+		return jsonString;
+	}
+	
+	@RequestMapping(value="/medicine", method=RequestMethod.GET, produces = "application/text; charset=UTF-8") // 콘솔창의 네트워크에서 본 경로로 설정
+	public @ResponseBody String medicineList() throws JsonProcessingException {
+		List<recycle> list = service.medicineList();
+		ObjectMapper om = new ObjectMapper(); //Jackson 에서 지원하는 도구
+		String jsonString = om.writeValueAsString(list); //변환하고 싶은 객체를 () 안에 넘겨주면 됨
+		
+		return jsonString;
+	}
+	
+	@RequestMapping(value="/clothes", method=RequestMethod.GET, produces = "application/text; charset=UTF-8") // 콘솔창의 네트워크에서 본 경로로 설정
+	public @ResponseBody String clothesList() throws JsonProcessingException {
+		List<recycle> list = service.clothesList();
+		ObjectMapper om = new ObjectMapper(); //Jackson 에서 지원하는 도구
+		String jsonString = om.writeValueAsString(list); //변환하고 싶은 객체를 () 안에 넘겨주면 됨
 		
 		return jsonString;
 	}

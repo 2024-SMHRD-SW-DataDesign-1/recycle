@@ -35,8 +35,6 @@
 				</ul>
 			</nav>
 		</div>
-		
-			
 
 		<!-- Footer -->
 		<div id="footer">
