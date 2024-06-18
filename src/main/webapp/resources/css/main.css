@@ -3507,4 +3507,22 @@ button.small,
 	
 .incorrect {
 	color: red;
-	}	
+	}
+	
+.swiper {
+	position: relative;
+
+	vertical-align: center;
+
+	max-width: 500px; 
+	
+	height: 500px;
+}
+
+#menu_btn{
+   position: relative;
+   top: 20px;
+   z-index: 1000;
+}
+
+

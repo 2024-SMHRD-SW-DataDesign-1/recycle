@@ -18,12 +18,24 @@
 <script type="text/javascript"
 	src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=96fa0336ba0e9190eea3854401eb131e&libraries=clusterer"></script>
 
+<style type="text/css">
+	#map
+	{
+		margin-top : -40px;	
+	}
+	
+</style>
+
+
+
+
 </head>
 <body class="is-preload">
 	<div id="page-wrapper">
 
+
 		<!-- Header -->
-		<div id="header">
+		<div id="header" >
 
 			<!-- Logo -->
 			<h1>
@@ -41,14 +53,16 @@
 				</ul>
 			</nav>
 		</div>
+		
+		<div id="menu_btn">
+			<button onclick="trash_btn()">분리수거</button>
+			<button onclick="lamp_btn()">폐형광등</button>
+			<button onclick="battery_btn()">폐건전지</button>
+			<button onclick="medicine_btn()">폐의약품</button>
+			<button onclick="clothes_btn()">의류수거함</button>
+		</div>
 
-		<button onclick="trash_btn()">분리수거</button>
-		<button onclick="lamp_btn()">폐형광등</button>
-		<button onclick="battery_btn()">폐건전지</button>
-		<button onclick="medicine_btn()">폐의약품</button>
-		<button onclick="clothes_btn()">의류수거함</button>
-
-		<div id="map" style="width: 100%; height: 600px;"></div>
+		<div id="map" style="width: 100%; height: 700px;" ></div>
 
 
 		<script type="text/javascript">

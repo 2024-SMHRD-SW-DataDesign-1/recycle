@@ -11,6 +11,8 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="resources/css/main.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 </head>
 <body class="is-preload">
@@ -35,8 +37,36 @@
 				</ul>
 			</nav>
 		</div>
-
-			하하호호
+		<!-- Banner -->
+				<section>
+					<div class="swiper">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+						  	<!-- Slides -->
+						  	<div class="swiper-slide">
+							  	<p align="center"><img src="resources/images/프링글스-통.jpg" width="300px" height="300px" ></p>
+						  	</div>
+						  	<div class="swiper-slide">
+							  	<img src="https://via.placeholder.com/300x300">
+						   	</div>
+						  	<div class="swiper-slide">
+							  	<img src="https://via.placeholder.com/300x300">
+						 	</div>
+						  	<div class="swiper-slide">
+							  	<img src="https://via.placeholder.com/300x300">
+						  	</div>  
+						</div>
+						<!-- If we need navigation buttons -->
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+						<!-- <div class="swiper-pagination"></div> -->
+		  
+						<!-- If we need scrollbar -->
+						<div class="swiper-scrollbar"></div>
+				  	</div>
+				</section>	  
+				
+			
 
 		<!-- Footer -->
 		<div id="footer">
@@ -79,7 +109,28 @@
 	<script src="resources/js/breakpoints.min.js"></script>
 	<script src="resources/js/util.js"></script>
 	<script src="resources/js/main.js"></script>
-	
+	<script>
+				const swiper = new Swiper('.swiper', {
+				  // Optional parameters
+				  loop: true,
+				  slidesPerView: 1,
+				  // If we need pagination
+				  pagination: {
+					el: '.swiper-pagination',
+				  },
+				
+				  // Navigation arrows
+				  navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				  },
+				
+				  // And if we need scrollbar
+				  scrollbar: {
+					el: '.swiper-scrollbar',
+				  },
+				});
+			</script>
 
 </body>
 </html>
