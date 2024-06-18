@@ -42,35 +42,24 @@
 			</nav>
 		</div>
 
-		<button onclick="trash_btn()">분리수거</button>
-		<button onclick="lamp_btn()">폐형광등</button>
-		<button onclick="battery_btn()">폐건전지</button>
-		<button onclick="medicine_btn()">폐의약품</button>
-		<button onclick="clothes_btn()">의류수거함</button>
-
+		<div id="menu_btn">
+			<button onclick="trash_btn()">분리수거</button>
+			<button onclick="lamp_btn()">폐형광등</button>
+			<button onclick="battery_btn()">폐건전지</button>
+			<button onclick="medicine_btn()">폐의약품</button>
+			<button onclick="clothes_btn()">의류수거함</button>
+		</div>
 		<div id="map" style="width: 100%; height: 600px;"></div>
 
 
 		<script type="text/javascript">
 			$(document).ready(function() {
-				loadList1()
-			})
-
-			$(document).ready(function() {
-				loadList2()
-			})
-
-			$(document).ready(function() {
-				loadList3()
-			})
-
-			$(document).ready(function() {
-				loadList4()
-			})
-
-			$(document).ready(function() {
-				loadList5()
-			})
+				loadList1();
+				loadList2();
+				loadList3();
+				loadList4();
+				loadList5();
+			});
 
 			var trashArr1 = []; //분리수거함 마커
 			var lampArr2 = []; //폐형광등함 마커
@@ -79,16 +68,17 @@
 			var clothesArr5 = []; //의류수거함 마커
 
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-			mapOption = {
-				center : new kakao.maps.LatLng(35.149839, 126.919983), // 지도의 중심좌표
-				level : 10, // 지도의 확대 레벨
-				mapTypeId : kakao.maps.MapTypeId.ROADMAP
-			// 지도종류
-			};
+	         mapOption = {
+	            center : new kakao.maps.LatLng(36.511552, 128.012002), // 지도의 중심좌표
+	            level : 12, // 지도의 확대 레벨
+	            mapTypeId : kakao.maps.MapTypeId.ROADMAP
+	         // 지도종류
+	         };
 
 			// 지도를 생성한다 
 			var map = new kakao.maps.Map(mapContainer, mapOption);
-
+			
+	         
 			/////////////////////////////////////////////////////////////////지도 띄우는 코드
 
 			function loadList1() { ////////////////////////////////json 파일로 분리수거 데이터 가져오는 함수
@@ -151,13 +141,8 @@
 				})
 			}
 
-			
 			////////////////////////////////////////////// 분리수거함 폐형광등 마커 띄우기
 			function listView1(res) {
-
-				//for (var i = 0; i < res.length; i++) {
-				//	console.log(res[i].latitude + ',' + res[i].longitude)
-				//}
 
 				var positions = []
 				for (var i = 0; i < res.length; i++) {
@@ -174,29 +159,23 @@
 				// 마커 이미지의 이미지 주소입니다
 				var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
+				// 인포윈도우 객체 배열
+				//var infowindowArray = [];
+				
 				for (var i = 0; i < positions.length; i++) {
-
-					// 마커 이미지의 이미지 크기 입니다
 					var imageSize = new kakao.maps.Size(24, 35);
-
-					// 마커 이미지를 생성합니다    
 					var markerImage = new kakao.maps.MarkerImage(imageSrc,
 							imageSize);
-
-					// 마커를 생성합니다
 					var marker = new kakao.maps.Marker({
 						map : map, // 마커를 표시할 지도
 						position : positions[i].latlng, // 마커를 표시할 위치
 						title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
 						image : markerImage
-					// 마커 이미지 
 					});
 
 					trashArr1.push(marker) //  각 마커 리스트에 마커 추가
-
 					marker.setMap(null)
-					//marker.setMap(map)
-					//console.log(trashArr1)
+								
 				}
 
 			}
@@ -249,7 +228,7 @@
 				}
 
 			}
-			
+
 			///////////////////////////////////////////////////////////////////////// 폐건전지 마커 띄우기
 			function listView3(res) {
 
@@ -299,12 +278,11 @@
 
 			}
 
-			
 			///////////////////////////////////////////////////////////////////////// 폐건전지 마커 띄우기
 			function listView4(res) {
 
 				//for (var i = 0; i < res.length; i++) {
-					//console.log(res[i].latitude + ',' + res[i].longitude)
+				//console.log(res[i].latitude + ',' + res[i].longitude)
 				//}
 
 				var positions = []
@@ -354,7 +332,7 @@
 			function listView5(res) {
 
 				//for (var i = 0; i < res.length; i++) {
-					//console.log(res[i].latitude + ',' + res[i].longitude)
+				//console.log(res[i].latitude + ',' + res[i].longitude)
 				//}
 
 				var positions = []
@@ -419,7 +397,7 @@
 				for (var i = 0; i < medicineArr4.length; i++) {
 					medicineArr4[i].setMap(null)
 				}
-				
+
 				for (var i = 0; i < clothesArr5.length; i++) {
 					clothesArr5[i].setMap(null)
 				}
@@ -445,7 +423,7 @@
 				for (var i = 0; i < medicineArr4.length; i++) {
 					medicineArr4[i].setMap(null)
 				}
-				
+
 				for (var i = 0; i < clothesArr5.length; i++) {
 					clothesArr5[i].setMap(null)
 				}
@@ -471,7 +449,7 @@
 				for (var i = 0; i < medicineArr4.length; i++) {
 					medicineArr4[i].setMap(null)
 				}
-				
+
 				for (var i = 0; i < clothesArr5.length; i++) {
 					clothesArr5[i].setMap(null)
 				}
@@ -497,7 +475,7 @@
 				for (var i = 0; i < medicineArr4.length; i++) {
 					medicineArr4[i].setMap(map)
 				}
-				
+
 				for (var i = 0; i < clothesArr5.length; i++) {
 					clothesArr5[i].setMap(null)
 				}

@@ -2649,7 +2649,7 @@ button.small,
 #header {
 	text-align: center;
 	padding: 3em 0 0 0;
-	background-color: #fff;
+	background-color: ddd;
 	background-image: url("images/bg02.png"), url("images/bg02.png"), url("images/bg01.png");
 	background-position: top left, top left, top left;
 	background-size: 100% 6em, 100% 6em, auto;
@@ -3507,4 +3507,10 @@ button.small,
 	
 .incorrect {
 	color: red;
-	}	
+	}
+	
+#menu_btn{
+	position: relative;
+	top: 50px;
+	z-index: 1000;
+}	
