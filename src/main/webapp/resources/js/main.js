@@ -66,24 +66,3 @@
 
 })(jQuery);
 
-
-document.getElementById('checkAnswers').addEventListener('click', function() {
-    const labels = document.querySelectorAll('label');
-	const explanations = document.querySelectorAll('.explanation');
-	
-    labels.forEach(label => {
-        const radio = label.querySelector('input');
-        if (radio && radio.dataset.correct === "true") {
-            label.classList.add('correct');
-            label.classList.remove('incorrect');
-        } else if (radio && radio.dataset.correct === "false") {
-            label.classList.add('incorrect');
-            label.classList.remove('correct');
-        }
-    });
-
-	explanations.forEach(explanation => {
-        explanation.style.display = 'block';
-	});	
-});
-
