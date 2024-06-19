@@ -2152,7 +2152,7 @@ input[type="email"] {
 }
 
 label {
-   display: block;
+   /*display: block;*/
    color: inherit;
    font-weight: 600;
    line-height: 1.75em;
@@ -2649,7 +2649,7 @@ button.small,
 #header {
    text-align: center;
    padding: 3em 0 0 0;
-   background-color: #fff;
+   background-color: ddd;
    background-image: url("images/bg02.png"), url("images/bg02.png"), url("images/bg01.png");
    background-position: top left, top left, top left;
    background-size: 100% 6em, 100% 6em, auto;
@@ -3509,6 +3509,16 @@ button.small,
    color: red;
    }
    
+ .correct-border {
+    border: 2px double solid green;
+ }
+ 
+ .incorrect-border {
+    border: 2px double solid red;
+ }
+ 
+ 
+   
 .swiper {
    position: relative;
 
@@ -3525,4 +3535,19 @@ button.small,
    z-index: 1000;
 }
 
+input {
+   margin: 10px;
+   text-align: center;
+}
+
+.border1 {
+   border:4px double #006400;
+   border-radius : 10px;
+}
+
+
+.newClass{
+   border:4px double #006400;
+   border-radius : 10px;
+}
 
