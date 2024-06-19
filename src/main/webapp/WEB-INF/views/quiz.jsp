@@ -83,9 +83,9 @@
 								<span><img src="resources/images/깨진유리병.jpg" width="300px" height="300px"></span>
 				
 								<br><br>
-								<label><input type="radio" name="question4" class="answer" data-correct="true"> O</label>
-								<label><input type="radio" name="question4" class="answer" data-correct="false"> X</label>
-								<p class="explanation" style="display: none;">해설 : 깨진 유리병도 재활용이 가능하다.</p>
+								<label><input type="radio" name="question4" class="answer" data-correct="false"> O</label>
+								<label><input type="radio" name="question4" class="answer" data-correct="true"> X</label>
+								<p class="explanation" style="display: none;">해설 : 깨진 유리는 잘 감싸 반드시 종량제 봉투 안에 담아 버려야 한다.</p>
 							</div>
 
 							<br><br><br><br><br>
