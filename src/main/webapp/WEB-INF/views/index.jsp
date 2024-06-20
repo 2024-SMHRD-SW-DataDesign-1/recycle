@@ -32,7 +32,6 @@
                         <div class="box highlight">
                            <i class="icon solid major fa-recycle"></i>
                            <h3>정확한 분리 배출법</h3>
-                           <p>재질별, 품목별 분리 배출법을 제공해준다.</p>
                            <p>정확하고 편리한 재질별, 품목별 분리 배출법 제공</p>
                         </div>
                      </section>
@@ -40,7 +39,6 @@
                         <div class="box highlight">
                            <i class="icon solid major fa-trash"></i>
                            <h3>올바른 처리 방법</h3>
-                           <p>퀴즈를 통해 올바른 처리 방법을 풀어볼 수 있다.</p>
                            <p>퀴즈를 통한 올바른 처리 방법 제공 </p>
                         </div>
                      </section>
@@ -48,7 +46,6 @@
                         <div class="box highlight">
                            <i class="icon solid major fa-map"></i>
                            <h3>수거함 위치 제공</h3>
-                           <p>폐형광등, 폐건전지, 폐의약품 등 다양한 수거함 위치를 제공해준다.
                            <p>다양한 분리 수거함 위치 제공</p>
                         </div>
                      </section>
@@ -81,7 +78,35 @@
                      </section>
                   </div>
                </div>
-            </section>   
+            </section>
+            
+            <!-- UpDownBtn-->
+			<div class="upBtns">
+				<div class="moveTopBtn">↑</div>
+			</div>
+
+			<div class="downBtns">
+				<div class="moveBottomBtn">↓</div>
+			</div>	
+			
+			<script type="text/javascript">
+				const topBtn = document.querySelector(".moveTopBtn");
+				
+				// 버튼 클릭 시 맨 위로 이동
+				 topBtn.onclick = () => {
+				
+				  window.scrollTo({ top: 0, behavior: "smooth" });  
+				}
+	
+				const bottomBtn = document.querySelector(".moveBottomBtn");
+	
+				// 버튼 클릭 시 페이지 하단으로 이동
+				 bottomBtn.onclick = () => {
+					 
+				  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+				};
+			</script>
+               
          <!-- Footer -->
       <jsp:include page="footer.jsp"></jsp:include>
 
