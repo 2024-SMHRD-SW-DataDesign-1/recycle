@@ -249,11 +249,35 @@
                   
                   $('c').addClass('newClass')
                }
-               
-       
-               
             </script>
          </section>
+	
+		 <!-- UpDownBtn-->
+			<div class="upBtns">
+				<div class="moveTopBtn">↑</div>
+			</div>
+
+			<div class="downBtns">
+				<div class="moveBottomBtn">↓</div>
+			</div>	
+			
+			<script type="text/javascript">
+				const topBtn = document.querySelector(".moveTopBtn");
+				
+				// 버튼 클릭 시 맨 위로 이동
+				 topBtn.onclick = () => {
+				
+				  window.scrollTo({ top: 0, behavior: "smooth" });  
+				}
+	
+				const bottomBtn = document.querySelector(".moveBottomBtn");
+	
+				// 버튼 클릭 시 페이지 하단으로 이동
+				 bottomBtn.onclick = () => {
+					 
+				  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+				};
+			</script>
 
          <!-- Footer -->
       <jsp:include page="footer.jsp"></jsp:include>
@@ -267,7 +291,7 @@
          <script src="resources/js/breakpoints.min.js"></script>
          <script src="resources/js/util.js"></script>
          <script src="resources/js/main.js"></script>
-
+				
 
    </body>
 </html>
