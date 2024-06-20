@@ -14,24 +14,8 @@
    <body class="is-preload">
       <div id="page-wrapper">
 
-         <!-- Header -->
-            <div id="header">
-
-               <!-- Logo -->
-                  <h1><a href="index.html" id="logo">Recycle Map</a></h1>
-
-               <!-- Nav -->
-                  <nav id="nav">
-                     <ul>
-                        <li><a href="index">홈</a></li>
-                        <li><a href="list">지도</a></li>
-                        <li><a href="material">재질별 분리배출</a></li>
-                        <li><a href="item">품목별 분리배출</a></li>
-                        <li><a href="quiz">퀴즈</a></li>
-                     </ul>
-                  </nav>
-
-            </div>
+		<!-- Header -->
+		<jsp:include page="header.jsp"></jsp:include>
 
          <!-- Main -->
          <section class="wrapper style1">
@@ -43,7 +27,7 @@
                   <article>
                   	<div class="quiz">
                         <h3>[Quiz01]<br>칫솔은 플라스틱 재활용 쓰레기이다.</h3>
-                        <span><img src="resources/images/칫솔.jfif"></span>
+                        <span><img src="resources/images/toothbrush_img.png" width="300px" height="300px"></span>
 
                         <br><br>
                         
@@ -134,7 +118,7 @@
                      <br><br><br><br><br>
                      <div class="quiz">
                         <h3>[Quiz06]<br>(무색 스티로폼과 같이) 유색 스티로폼은 분리 배출이 가능하다.</h3>
-                        <span><img src="" width="300px" height="300px"></span>
+                        <span><img src="resources/images/styrofoam_img.png" width="300px" height="300px"></span>
             
                         <br><br>
                         
@@ -171,7 +155,7 @@
                      <br><br><br><br><br>
                      <div class="quiz">
                         <h3>[Quiz08]<br>포장용 뽁뽁이는 비닐로 분리 배출이 가능하다.</h3>
-                        <span><img src="" width="300px" height="300px"></span>
+                        <span><img src="resources/images/bbogbbog_img.png" width="300px" height="300px"></span>
                      
                         <br><br>
                         <c> 
@@ -189,7 +173,7 @@
                      <br><br><br><br><br>
                      <div class="quiz">
                         <h3>[Quiz09]<br>거울과 유리병과 접시는 분리 배출이 가능하다.</h3>
-                        <span><img src="" width="300px" height="300px"></span>
+                        <span><img src="resources/images/mirror_img.png" width="300px" height="300px"></span>
             
                         <br><br>
                         
@@ -207,7 +191,7 @@
                      <br><br><br><br><br>
                      <div class="quiz">
                         <h3>[Quiz10]<br>페트병의 마개는 꼭 닫아서 분리 배출해야 한다.</h3>
-                        <span><img src="" width="300px" height="300px"></span>
+                        <span><img src="resources/images/pet_img.png" width="300px" height="300px"></span>
                      
                         <br><br>
                         <c> 
@@ -236,7 +220,7 @@
 
                    const labels = document.querySelectorAll('label');
                   const explanations = document.querySelectorAll('.explanation');
-                  const answer = document.querySelectorAll('.answer');
+                  /* const answer = document.querySelectorAll('.answer'); */
                   const ans = document.querySelectorAll('#ans');
                   
                    labels.forEach(label => {
@@ -255,9 +239,9 @@
                   }); 
                  
                   
-                  answer.forEach(answer => {
+                  /* answer.forEach(answer => {
                      answer.style.display = 'inline';
-                 }); 
+                 }); */ 
                   
                   ans.forEach(ans => {
                      ans.style.display = 'inline';
@@ -272,30 +256,7 @@
          </section>
 
          <!-- Footer -->
-         <div id="footer">
-            <div class="container">
-                  <div class="row">
-                     
-                  </div>
-               </div>
-
-               <!-- Icons -->
-                  <ul class="icons">
-                     <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                     <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                     <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                     <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                     <li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
-                  </ul>
-
-               <!-- Copyright -->
-                  <div class="copyright">
-                     <ul class="menu">
-                        <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                     </ul>
-                  </div>
-
-            </div>
+		<jsp:include page="footer.jsp"></jsp:include>
 
       </div>
 
