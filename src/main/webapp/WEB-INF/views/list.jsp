@@ -13,11 +13,11 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
                 <script type="text/javascript"
-                    src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=96fa0336ba0e9190eea3854401eb131e&libraries=clusterer"></script>
+                    src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=96fa0336ba0e9190eea3854401eb131e&libraries=clusterer,services"></script>
 
                 <style type="text/css">
                     #map {
-                        margin-top: -40px;
+                        margin-top: -340px;
                     }
                 </style>
                 <link rel="shortcut icon" href="#">
@@ -52,14 +52,19 @@
                     </div>
 
                     <div id="menu_btn">
-                        <button onclick="trash_btn()">분리수거</button>
-                        <button onclick="lamp_btn()">폐형광등</button>
-                        <button onclick="battery_btn()">폐건전지</button>
-                        <button onclick="medicine_btn()">폐의약품</button>
-                        <button onclick="clothes_btn()">의류수거함</button>
-                         <br>
+                        <button type="button" value="send" onclick="test()">현재위치 검색</button>
+                        <input type="text" id="home"   style="border:1px solid #180e0e1c; radius background-color:#ffffff85; border-radius:5px;">
                         <br>
-                        <input type="text" id="home">
+                        <button onclick="trash_btn()">분리수거</button>
+                        <br>
+                        <button onclick="lamp_btn()">폐형광등</button>
+                        <br>
+                        <button onclick="battery_btn()">폐건전지</button>
+                        <br>
+                        <button onclick="medicine_btn()">폐의약품</button>
+                        <br>
+                        <button onclick="clothes_btn()">의류수거함</button>
+                        <br>
                     </div>
 
                     <div id="map" style="width: 100%; height: 700px;"></div>
@@ -92,6 +97,42 @@
                         // 지도를 생성한다 
                         let map = new kakao.maps.Map(mapContainer, mapOption);
 
+                        //////////////////////////////////////////////////////////////
+
+                        let geocoder = new kakao.maps.services.Geocoder();
+
+                        function test() {
+                            let address = document.getElementById('home').value;
+                            console.log(address);
+
+                            // 주소로 좌표를 검색합니다
+                            geocoder.addressSearch(address, function (result, status) {
+
+                                // 정상적으로 검색이 완료됐으면 
+                                if (status === kakao.maps.services.Status.OK) {
+
+                                    let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+                                    console.log(coords);
+
+
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    let marker = new kakao.maps.Marker({
+                                        map: map,
+                                        position: coords
+                                    });
+
+                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                    let infowindow = new kakao.maps.InfoWindow({
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">현재 위치</div>'
+                                    });
+                                    infowindow.open(map, marker);
+
+                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                    map.setCenter(coords);
+                                    map.setLevel(3);
+                                }
+                            });
+                        }
 
                         /////////////////////////////////////////////////////////////////지도 띄우는 코드
 
@@ -186,34 +227,27 @@
                                     position: positions[i].latlng, // 마커를 표시할 위치
                                     title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
                                     image: markerImage
-                                    
+
                                 });
-									
+
                                 trashArr1.push(marker) //  각 마커 리스트에 마커 추가
                                 marker.setMap(null)
-								
-                                 let iwContent = '<div style="padding:5px;">' + positions[i].title// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+                                let iwContent = '<div style="padding:5px;">' + positions[i].title// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
                                 //let iwPosition = new kakao.maps.LatLng(positions[i].latlng.Ma,positions[i].latlng.La); //인포윈도우 표시 위치입니다
-                                
+
                                 let infowindow = new kakao.maps.InfoWindow({
                                     //position: positions[i].latlng,
                                     content: iwContent,
-                                    removable : true,
+                                    removable: true,
                                 });
-                                
-                                kakao.maps.event.addListener(marker, 'click', function() {
-                                    // 마커 위에 인포윈도우를 표시합니다
-                                
-                                    
-                                    infowindow.open(map, marker);
-                                
-                              });
-							//for, fun 대괄호
-                            }
-                            
-                         // 마커에 클릭이벤트를 등록합니다
-     
 
+                                kakao.maps.event.addListener(marker, 'click', function () {
+                                    infowindow.open(map, marker);
+
+                                });
+                                //for, fun 대괄호
+                            }
                         }
 
                         ///////////////////////////////////////////////////////////////////////// 폐형광등 마커 띄우기
@@ -380,8 +414,8 @@
                                 }
                                 positions.push(position)
                             }
-			
-							            
+
+
                             //console.log(positions)
 
                             // 마커 이미지의 이미지 주소입니다
