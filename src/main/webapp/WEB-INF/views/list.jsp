@@ -80,6 +80,10 @@
 
                     <script type="text/javascript">
                         $(document).ready(function () {
+                        	
+                        	
+                     
+                        	
                             loadList1();
                             loadList2();
                             loadList3();
@@ -92,6 +96,10 @@
                         let batteryArr3 = []; //폐건전지 마커
                         let medicineArr4 = []; //폐의약품 마커
                         let clothesArr5 = []; //의류수거함 마커
+                        
+                        
+                        
+                        let coords = null; //위치
 
                         let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
                             mapOption = {
@@ -115,7 +123,7 @@
 
                         function test() {
                             let address = document.getElementById('home').value;
-                            console.log(address);
+                            //console.log(address);
 
                             // 주소로 좌표를 검색합니다
                             geocoder.addressSearch(address, function (result, status) {
@@ -123,9 +131,9 @@
                                 // 정상적으로 검색이 완료됐으면 
                                 if (status === kakao.maps.services.Status.OK) {
 
-                                    let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-                                    console.log(coords);
-
+                                    coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+                                    console.log(coords)
+                                    //console.log(coords)
 
                                     // 결과값으로 받은 위치를 마커로 표시합니다
                                     let marker = new kakao.maps.Marker({
@@ -147,6 +155,7 @@
                             });
                         }
 
+                        //console.log(coords);
                         /////////////////////////////////////////////////////////////////지도 띄우는 코드
 
                         function loadList1() { ////////////////////////////////json 파일로 분리수거 데이터 가져오는 함수
@@ -211,7 +220,8 @@
 
                         ////////////////////////////////////////////// 분리수거함 폐형광등 마커 띄우기
                         function listView1(res) {
-
+                        	console.log(coords);
+                        	
                             let positions = []
                             for (let i = 0; i < res.length; i++) {
                                 let position = {
@@ -230,6 +240,9 @@
 
                             // 인포윈도우 객체 배열
                             //let infowindowArray = [];
+                            
+                            //let coo = document.getElementById("coords");
+                                //console.log(coo);
 
                             for (let i = 0; i < positions.length; i++) {
                                 let imageSize = new kakao.maps.Size(24, 35);
@@ -246,16 +259,35 @@
                                 trashArr1.push(marker1) //  각 마커 리스트에 마커 추가
                                 marker1.setMap(null)
 
-                                let iwContent = '<div style="padding:5px;">' + positions[i].title// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-								//console.log(marker1.positions[i].latlng)
+                                //let add = positions[i].latlng
+                                //console.log(add)
+
+                                //let iwContent = '<div style="padding:5px;">' + positions[i].title// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                                //let iwContent = '<div style="padding:5px;">' + positions[i].title+'<a href="https://map.kakao.com/link/from/현재 위치,${coords}/to/'+positions[i].title+','+ positions[i].latlng +'" style="color:blue" target="_blank">길찾기</a></div>'
+                                //'<a href="https://map.kakao.com/link/from/현재 위치,35.1508100801722,126.922184251176/to/'+positions[i].title+',33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>'
+                                //let iwContent = '<div style="padding:5px;">' + positions[i].title+'<a href="https://map.kakao.com/link/from/현재 위치,${coords}/to/'+positions[i].title+','+ positions[i].latlng +'" style="color:blue" target="_blank">길찾기</a></div>'
+                                //let iwContent = "<div style='padding:5px;'><a href='https://map.kakao.com/link/to/"+positions[i].title+","+positions[i].latlng.Ma + "," + positions[i].latlng.La +"' style='color:blue' target='_blank'>길찾기</a></div>"
+
+                                
+                                //console.log(coords.La);
+                                //console.log(coords);
+
+                                let iwContent =
+                                    '<div style="padding:5px;">' + positions[i].title + '<a href="https://map.kakao.com/link/from/현재 위치,35.1508100801722,126.922184251176/to/' +
+                                    positions[i].title + ',' + positions[i].latlng.Ma + ',' + positions[i].latlng.La + ' "style="color:blue" target="_blank">길찾기</a>';
+                                //console.log(iwContent);
+                                //console.log(positions[i].latlng.La)
+                                //console.log(positions[i].latlng.Ma)
                                 //let iwPosition = new kakao.maps.LatLng(positions[i].latlng.Ma,positions[i].latlng.La); //인포윈도우 표시 위치입니다
-								console.log(marker1.latlng)
+                                //console.log(marker1.latlng)
 
                                 let infowindow = new kakao.maps.InfoWindow({
                                     //position: positions[i].latlng,
                                     content: iwContent,
                                     removable: true,
                                 });
+
+                                //<a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a>
 
                                 kakao.maps.event.addListener(marker1, 'click', function () {
                                     infowindow.open(map, marker1);
@@ -531,7 +563,8 @@
 
                         ///////////////////////////////////////////////////////
                         function trash_btn() { //분리수거함 버튼 누를 시 본인 마커만 띄우기
-
+                        	console.log(coords);
+                        	
                             //console.log(trashArr1)
 
                             for (let i = 0; i < trashArr1.length; i++) {
