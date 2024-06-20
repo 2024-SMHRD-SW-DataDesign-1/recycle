@@ -3510,19 +3510,11 @@ button.small,
    }
    
  .correct-border {
-<<<<<<< HEAD
     border: 2px double solid green;
  }
  
  .incorrect-border {
-    border: 2px double solid red;
-=======
- 	border: 2px double solid green;
- }
- 
- .incorrect-border {
  	border: 2px double solid red;
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDesign-1/recycle.git
  }
  
  
@@ -3544,26 +3536,11 @@ button.small,
 }
 
 input {
-<<<<<<< HEAD
    margin: 10px;
    text-align: center;
 }
 
 .border1 {
-   border:4px double #006400;
-   border-radius : 10px;
-}
-
-
-.newClass{
-   border:4px double #006400;
-   border-radius : 10px;
-=======
-	margin: 10px;
-	text-align: center;
-}
-
-.border1 {
 	border:4px double #006400;
 	border-radius : 10px;
 }
@@ -3572,6 +3549,8 @@ input {
 .newClass{
 	border:4px double #006400;
 	border-radius : 10px;
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDesign-1/recycle.git
+	padding-right: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
