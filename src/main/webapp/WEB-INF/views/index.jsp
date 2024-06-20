@@ -19,26 +19,10 @@
    <div id="page-wrapper">
 
       <!-- Header -->
-      <div id="header">
-
-         <!-- Logo -->
-         <h1>
-            <a href="index" id="logo">Recycle Map</a>
-         </h1>
-
-         <!-- Nav -->
-         <nav id="nav">
-            <ul>
-               <li><a href="index">홈</a></li>
-               <li><a href="list">지도</a></li>
-               <li><a href="material">재질별 분리배출</a></li>
-               <li><a href="item">품목별 분리배출</a></li>
-               <li><a href="quiz">퀴즈</a></li>
-            </ul>
-         </nav>
-      </div>
+      <jsp:include page="header.jsp"></jsp:include>
+      
       <!-- Banner -->
-      <img src="resources/images/noah.jpg" style="width: 100%; height: 650px;">
+      <img src="resources/images/noah.jpg" style="width: 100%; height: 775px;">
               
       <!-- Highlights -->
             <section class="wrapper style1">
@@ -49,6 +33,7 @@
                            <i class="icon solid major fa-recycle"></i>
                            <h3>정확한 분리 배출법</h3>
                            <p>재질별, 품목별 분리 배출법을 제공해준다.</p>
+                           <p>정확하고 편리한 재질별, 품목별 분리 배출법 제공</p>
                         </div>
                      </section>
                      <section class="col-4 col-12-narrower">
@@ -56,6 +41,7 @@
                            <i class="icon solid major fa-trash"></i>
                            <h3>올바른 처리 방법</h3>
                            <p>퀴즈를 통해 올바른 처리 방법을 풀어볼 수 있다.</p>
+                           <p>퀴즈를 통한 올바른 처리 방법 제공 </p>
                         </div>
                      </section>
                      <section class="col-4 col-12-narrower">
@@ -63,6 +49,7 @@
                            <i class="icon solid major fa-map"></i>
                            <h3>수거함 위치 제공</h3>
                            <p>폐형광등, 폐건전지, 폐의약품 등 다양한 수거함 위치를 제공해준다.
+                           <p>다양한 분리 수거함 위치 제공</p>
                         </div>
                      </section>
                   </div>
@@ -95,37 +82,8 @@
                   </div>
                </div>
             </section>   
-
-      <!-- Footer -->
-      <div id="footer">
-         <div class="container">
-            <div class="row">
-               <section class="col-3 col-6-narrower col-12-mobilep"></section>
-            </div>
-         </div>
-
-         <!-- Icons -->
-         <ul class="icons">
-            <li><a href="#" class="icon brands fa-twitter"><span
-                  class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon brands fa-facebook-f"><span
-                  class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands fa-github"><span
-                  class="label">GitHub</span></a></li>
-            <li><a href="#" class="icon brands fa-linkedin-in"><span
-                  class="label">LinkedIn</span></a></li>
-            <li><a href="#" class="icon brands fa-google-plus-g"><span
-                  class="label">Google+</span></a></li>
-         </ul>
-
-         <!-- Copyright -->
-         <div class="copyright">
-            <ul class="menu">
-               <li>&copy; 새출발. All rights reserved</li>
-            </ul>
-         </div>
-
-      </div>
+         <!-- Footer -->
+      <jsp:include page="footer.jsp"></jsp:include>
 
    </div>
 
