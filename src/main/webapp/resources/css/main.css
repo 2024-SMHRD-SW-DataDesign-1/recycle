@@ -2115,6 +2115,7 @@ footer.major {
 
 /* Form */
 
+/*
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -2134,9 +2135,10 @@ textarea {
    display: block;
    outline: 0;
    padding: 0.75em;
-   text-decoration: none;
+   text-decoration: none; 
    width: 100%;
 }
+*/
 
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -2532,7 +2534,7 @@ button,
    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/bg01.png");
    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/bg01.png");
    background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/bg01.png");
-   background-color: #37c0fb;
+   background-color: #1b1b1bbf;
    border-radius: 5px;
    border: 0;
    color: #fff;
@@ -2545,6 +2547,8 @@ button,
    text-decoration: none;
    font-weight: 600;
    letter-spacing: -0.025em;
+   margin: 10px;
+   margin-left:30px;
 }
 
 input[type="submit"]:hover,
@@ -3490,8 +3494,8 @@ button.small,
    #cta {
       padding: 20px;
    }
-
-   /* Footer */
+   
+      /* Footer */
 
    #footer {
       padding: 2em 20px;
@@ -3510,19 +3514,11 @@ button.small,
    }
    
  .correct-border {
-<<<<<<< HEAD
     border: 2px double solid green;
  }
  
  .incorrect-border {
     border: 2px double solid red;
-=======
- 	border: 2px double solid green;
- }
- 
- .incorrect-border {
- 	border: 2px double solid red;
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDesign-1/recycle.git
  }
  
  
@@ -3544,7 +3540,6 @@ button.small,
 }
 
 input {
-<<<<<<< HEAD
    margin: 10px;
    text-align: center;
 }
@@ -3558,20 +3553,10 @@ input {
 .newClass{
    border:4px double #006400;
    border-radius : 10px;
-=======
-	margin: 10px;
-	text-align: center;
+   padding-right: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
-.border1 {
-	border:4px double #006400;
-	border-radius : 10px;
-}
-
-
-.newClass{
-	border:4px double #006400;
-	border-radius : 10px;
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-SW-DataDesign-1/recycle.git
-}
+   
 
