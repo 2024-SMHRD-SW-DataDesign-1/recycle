@@ -17,7 +17,12 @@
 
                 <style type="text/css">
                     #map {
-                        margin-top: -340px;
+                        margin-top: -380px;
+                    }
+
+                    #menu_btn {
+                        height: 380px;
+                        width: 250px;
                     }
                 </style>
                 <link rel="shortcut icon" href="#">
@@ -52,8 +57,10 @@
                     </div>
 
                     <div id="menu_btn">
+                        <input type="text" id="home" onkeyup="if(window.event.keyCode==13){test()}"
+                            style="border:1px solid #180e0e1c; radius background-color:#ffffff85; border-radius:5px;">
+                        <br>
                         <button type="button" value="send" onclick="test()">현재위치 검색</button>
-                        <input type="text" id="home"   style="border:1px solid #180e0e1c; radius background-color:#ffffff85; border-radius:5px;">
                         <br>
                         <button onclick="trash_btn()">분리수거</button>
                         <br>
@@ -73,6 +80,10 @@
 
                     <script type="text/javascript">
                         $(document).ready(function () {
+                        	
+                        	
+                     
+                        	
                             loadList1();
                             loadList2();
                             loadList3();
@@ -85,6 +96,10 @@
                         let batteryArr3 = []; //폐건전지 마커
                         let medicineArr4 = []; //폐의약품 마커
                         let clothesArr5 = []; //의류수거함 마커
+                        
+                        
+                        
+                        let coords = null; //위치
 
                         let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
                             mapOption = {
@@ -96,6 +111,11 @@
 
                         // 지도를 생성한다 
                         let map = new kakao.maps.Map(mapContainer, mapOption);
+                        //var mapTypeControl = new kakao.maps.MapTypeControl();
+                        //map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+                        //var zoomControl = new kakao.maps.ZoomControl();
+                        //map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
 
                         //////////////////////////////////////////////////////////////
 
@@ -103,7 +123,7 @@
 
                         function test() {
                             let address = document.getElementById('home').value;
-                            console.log(address);
+                            //console.log(address);
 
                             // 주소로 좌표를 검색합니다
                             geocoder.addressSearch(address, function (result, status) {
@@ -111,9 +131,9 @@
                                 // 정상적으로 검색이 완료됐으면 
                                 if (status === kakao.maps.services.Status.OK) {
 
-                                    let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-                                    console.log(coords);
-
+                                    coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+                                    console.log(coords)
+                                    //console.log(coords)
 
                                     // 결과값으로 받은 위치를 마커로 표시합니다
                                     let marker = new kakao.maps.Marker({
@@ -124,16 +144,18 @@
                                     // 인포윈도우로 장소에 대한 설명을 표시합니다
                                     let infowindow = new kakao.maps.InfoWindow({
                                         content: '<div style="width:150px;text-align:center;padding:6px 0;">현재 위치</div>'
+
                                     });
                                     infowindow.open(map, marker);
 
                                     // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                                     map.setCenter(coords);
-                                    map.setLevel(3);
+                                    map.setLevel(4);
                                 }
                             });
                         }
 
+                        //console.log(coords);
                         /////////////////////////////////////////////////////////////////지도 띄우는 코드
 
                         function loadList1() { ////////////////////////////////json 파일로 분리수거 데이터 가져오는 함수
@@ -198,7 +220,8 @@
 
                         ////////////////////////////////////////////// 분리수거함 폐형광등 마커 띄우기
                         function listView1(res) {
-
+                        	console.log(coords);
+                        	
                             let positions = []
                             for (let i = 0; i < res.length; i++) {
                                 let position = {
@@ -217,12 +240,15 @@
 
                             // 인포윈도우 객체 배열
                             //let infowindowArray = [];
+                            
+                            //let coo = document.getElementById("coords");
+                                //console.log(coo);
 
                             for (let i = 0; i < positions.length; i++) {
                                 let imageSize = new kakao.maps.Size(24, 35);
                                 let markerImage = new kakao.maps.MarkerImage(imageSrc,
                                     imageSize);
-                                let marker = new kakao.maps.Marker({
+                                let marker1 = new kakao.maps.Marker({
                                     map: map, // 마커를 표시할 지도
                                     position: positions[i].latlng, // 마커를 표시할 위치
                                     title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
@@ -230,11 +256,30 @@
 
                                 });
 
-                                trashArr1.push(marker) //  각 마커 리스트에 마커 추가
-                                marker.setMap(null)
+                                trashArr1.push(marker1) //  각 마커 리스트에 마커 추가
+                                marker1.setMap(null)
 
-                                let iwContent = '<div style="padding:5px;">' + positions[i].title// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                                //let add = positions[i].latlng
+                                //console.log(add)
+
+                                //let iwContent = '<div style="padding:5px;">' + positions[i].title// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                                //let iwContent = '<div style="padding:5px;">' + positions[i].title+'<a href="https://map.kakao.com/link/from/현재 위치,${coords}/to/'+positions[i].title+','+ positions[i].latlng +'" style="color:blue" target="_blank">길찾기</a></div>'
+                                //'<a href="https://map.kakao.com/link/from/현재 위치,35.1508100801722,126.922184251176/to/'+positions[i].title+',33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>'
+                                //let iwContent = '<div style="padding:5px;">' + positions[i].title+'<a href="https://map.kakao.com/link/from/현재 위치,${coords}/to/'+positions[i].title+','+ positions[i].latlng +'" style="color:blue" target="_blank">길찾기</a></div>'
+                                //let iwContent = "<div style='padding:5px;'><a href='https://map.kakao.com/link/to/"+positions[i].title+","+positions[i].latlng.Ma + "," + positions[i].latlng.La +"' style='color:blue' target='_blank'>길찾기</a></div>"
+
+                                
+                                //console.log(coords.La);
+                                //console.log(coords);
+
+                                let iwContent =
+                                    '<div style="padding:5px;">' + positions[i].title + '<a href="https://map.kakao.com/link/from/현재 위치,35.1508100801722,126.922184251176/to/' +
+                                    positions[i].title + ',' + positions[i].latlng.Ma + ',' + positions[i].latlng.La + ' "style="color:blue" target="_blank">길찾기</a>';
+                                //console.log(iwContent);
+                                //console.log(positions[i].latlng.La)
+                                //console.log(positions[i].latlng.Ma)
                                 //let iwPosition = new kakao.maps.LatLng(positions[i].latlng.Ma,positions[i].latlng.La); //인포윈도우 표시 위치입니다
+                                //console.log(marker1.latlng)
 
                                 let infowindow = new kakao.maps.InfoWindow({
                                     //position: positions[i].latlng,
@@ -242,8 +287,10 @@
                                     removable: true,
                                 });
 
-                                kakao.maps.event.addListener(marker, 'click', function () {
-                                    infowindow.open(map, marker);
+                                //<a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a>
+
+                                kakao.maps.event.addListener(marker1, 'click', function () {
+                                    infowindow.open(map, marker1);
 
                                 });
                                 //for, fun 대괄호
@@ -282,7 +329,7 @@
                                     imageSize);
 
                                 // 마커를 생성합니다
-                                let marker = new kakao.maps.Marker({
+                                let marker2 = new kakao.maps.Marker({
                                     map: map, // 마커를 표시할 지도
                                     position: positions[i].latlng, // 마커를 표시할 위치
                                     title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
@@ -290,11 +337,32 @@
                                     // 마커 이미지 
                                 });
 
-                                lampArr2.push(marker) //  각 마커 리스트에 마커 추가
+                                lampArr2.push(marker2) //  각 마커 리스트에 마커 추가
 
-                                marker.setMap(null)
+                                marker2.setMap(null)
                                 //marker.setMap(map)
                                 //console.log(lampArr2)
+
+                                let iwContent = '<div style="padding:5px;">' + positions[i].title // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                                //iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+                                // 인포윈도우를 생성합니다
+                                let infowindow = new kakao.maps.InfoWindow({
+                                    content: iwContent,
+                                    removable: true
+                                });
+
+
+                                // 마커에 클릭이벤트를 등록합니다
+                                kakao.maps.event.addListener(marker2, 'click', function () {
+                                    // 마커 위에 인포윈도우를 표시합니다
+                                    infowindow.open(map, marker2);
+
+                                });
+
+
+
+
                             }
 
                         }
@@ -331,7 +399,7 @@
                                     imageSize);
 
                                 // 마커를 생성합니다
-                                let marker = new kakao.maps.Marker({
+                                let marker3 = new kakao.maps.Marker({
                                     map: map, // 마커를 표시할 지도
                                     position: positions[i].latlng, // 마커를 표시할 위치
                                     title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
@@ -339,11 +407,26 @@
                                     // 마커 이미지 
                                 });
 
-                                batteryArr3.push(marker) //  각 마커 리스트에 마커 추가
+                                batteryArr3.push(marker3) //  각 마커 리스트에 마커 추가
 
-                                marker.setMap(null)
+                                marker3.setMap(null)
                                 //marker.setMap(map)
                                 //console.log(batteryArr3)
+
+                                let iwContent = '<div style="padding:5px;">' + positions[i].title// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+                                //let iwPosition = new kakao.maps.LatLng(positions[i].latlng.Ma,positions[i].latlng.La); //인포윈도우 표시 위치입니다
+
+                                let infowindow = new kakao.maps.InfoWindow({
+                                    //position: positions[i].latlng,
+                                    content: iwContent,
+                                    removable: true,
+                                });
+
+                                kakao.maps.event.addListener(marker3, 'click', function () {
+                                    infowindow.open(map, marker3);
+
+                                });
                             }
 
                         }
@@ -381,7 +464,7 @@
                                     imageSize);
 
                                 // 마커를 생성합니다
-                                let marker = new kakao.maps.Marker({
+                                let marker4 = new kakao.maps.Marker({
                                     map: map, // 마커를 표시할 지도
                                     position: positions[i].latlng, // 마커를 표시할 위치
                                     title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
@@ -389,11 +472,26 @@
                                     // 마커 이미지 
                                 });
 
-                                medicineArr4.push(marker) //  각 마커 리스트에 마커 추가
+                                medicineArr4.push(marker4) //  각 마커 리스트에 마커 추가
 
-                                marker.setMap(null)
+                                marker4.setMap(null)
                                 //marker.setMap(map)
                                 //console.log(medicineArr4)
+
+                                let iwContent = '<div style="padding:5px;">' + positions[i].title// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+                                //let iwPosition = new kakao.maps.LatLng(positions[i].latlng.Ma,positions[i].latlng.La); //인포윈도우 표시 위치입니다
+
+                                let infowindow = new kakao.maps.InfoWindow({
+                                    //position: positions[i].latlng,
+                                    content: iwContent,
+                                    removable: true,
+                                });
+
+                                kakao.maps.event.addListener(marker4, 'click', function () {
+                                    infowindow.open(map, marker4);
+
+                                });
                             }
 
                         }
@@ -431,7 +529,7 @@
                                     imageSize);
 
                                 // 마커를 생성합니다
-                                let marker = new kakao.maps.Marker({
+                                let marker5 = new kakao.maps.Marker({
                                     map: map, // 마커를 표시할 지도
                                     position: positions[i].latlng, // 마커를 표시할 위치
                                     title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
@@ -439,18 +537,34 @@
                                     // 마커 이미지 
                                 });
 
-                                clothesArr5.push(marker) //  각 마커 리스트에 마커 추가
+                                clothesArr5.push(marker5) //  각 마커 리스트에 마커 추가
 
-                                marker.setMap(null)
+                                marker5.setMap(null)
                                 //marker.setMap(map)
                                 //console.log(clothesArr5)
+
+                                let iwContent = '<div style="padding:5px;">' + positions[i].title// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+                                //let iwPosition = new kakao.maps.LatLng(positions[i].latlng.Ma,positions[i].latlng.La); //인포윈도우 표시 위치입니다
+
+                                let infowindow = new kakao.maps.InfoWindow({
+                                    //position: positions[i].latlng,
+                                    content: iwContent,
+                                    removable: true,
+                                });
+
+                                kakao.maps.event.addListener(marker5, 'click', function () {
+                                    infowindow.open(map, marker5);
+
+                                });
                             }
 
                         }
 
                         ///////////////////////////////////////////////////////
                         function trash_btn() { //분리수거함 버튼 누를 시 본인 마커만 띄우기
-
+                        	console.log(coords);
+                        	
                             //console.log(trashArr1)
 
                             for (let i = 0; i < trashArr1.length; i++) {
