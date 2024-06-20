@@ -53,7 +53,7 @@
 
                     <div id="menu_btn">
                         <button type="button" value="send" onclick="test()">현재위치 검색</button>
-                        <input type="text" id="home"   style="border:1px solid #180e0e1c; radius background-color:#ffffff85; border-radius:5px;">
+                        <input type="text" id="home" style="border:1px solid #180e0e1c; radius background-color:#ffffff85; border-radius:5px;">
                         <br>
                         <button onclick="trash_btn()">분리수거</button>
                         <br>
