@@ -14,8 +14,8 @@
    <body class="is-preload">
       <div id="page-wrapper">
 
-		<!-- Header -->
-		<jsp:include page="header.jsp"></jsp:include>
+      <!-- Header -->
+      <jsp:include page="header.jsp"></jsp:include>
 
          <!-- Main -->
          <section class="wrapper style1">
@@ -25,13 +25,13 @@
                   <!-- Content -->
                   
                   <article>
-                  	<div class="quiz">
+                     <div class="quiz">
                         <h3>[Quiz01]<br>칫솔은 플라스틱 재활용 쓰레기이다.</h3>
                         <span><img src="resources/images/toothbrush_img.png" width="300px" height="300px"></span>
 
                         <br><br>
                         
-                        	<label><input type="radio" name="question2" class="answer" data-correct="false"> O</label>
+                           <label><input type="radio" name="question2" class="answer" data-correct="false"> O</label>
                         <br>
                         <c>
                             <label><input type="radio" name="question2" class="answer" data-correct="true"> X</label>
@@ -42,7 +42,7 @@
                         <br><strong style="color:#A9A9A9">70% 이상이 플라스틱으로 이루어진 칫솔은 최근 서울특별시 강동구에서 폐 칫솔을 모아 줄넘기, 플라스틱 화분 등으로 재활용하기 위해 
                         <b style="color:#000080"><br>'블루우체통'</b>을 만들어 친환경 프로젝트 캠페인을 진행하고 있다.</strong></p>
                      </div>
-                  	
+                     
 
                      <br><br><br><br><br>
                      <div class="quiz">
@@ -68,7 +68,7 @@
             
                         <br><br>
                         
-                        	<label><input type="radio" name="question3"class="answer" data-correct="false"> O</label>
+                           <label><input type="radio" name="question3"class="answer" data-correct="false"> O</label>
                         <br>
                         <c>
                             <label><input type="radio" name="question3" class="answer" data-correct="true"> X</label>
@@ -86,11 +86,11 @@
             
                         <br><br>
                         
-                        	<label><input type="radio" name="question4" class="answer" data-correct="false"> O</label>
+                           <label><input type="radio" name="question4" class="answer" data-correct="false"> O</label>
                         <br>
                         <c> 
-                           	<label><input type="radio" name="question4" class="answer" data-correct="true"> X</label>
-                           	<span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
+                              <label><input type="radio" name="question4" class="answer" data-correct="true"> X</label>
+                              <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
                         
                         <p class="explanation" style="display: none;">해설 : 깨진 유리는 신문지 등으로 충분히 감싼 후, 반드시 종량제 봉투에 배출해야 한다.
@@ -105,11 +105,11 @@
                      
                         <br><br>
                         <c> 
-                           	<label><input type="radio" name="question5" class="answer" data-correct="true"> O</label>
-                           	<span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
+                              <label><input type="radio" name="question5" class="answer" data-correct="true"> O</label>
+                              <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
                         <br>
-                        	<label><input type="radio" name="question5" class="answer" data-correct="false"> X</label>
+                           <label><input type="radio" name="question5" class="answer" data-correct="false"> X</label>
                         
                         <p class="explanation" style="display: none;">해설 : 프링글스 통은 부위별로 다른 재질로 구성되어 있어서 납작하게 눌러 부피를 최대한 줄인 다음 일반 쓰레기로 배출하는 것이 낫다.</p>
                      </div>
@@ -122,11 +122,11 @@
             
                         <br><br>
                         
-                        	<label><input type="radio" name="question6" class="answer" data-correct="false"> O</label>
+                           <label><input type="radio" name="question6" class="answer" data-correct="false"> O</label>
                         <br>
                         <c> 
-                           	<label><input type="radio" name="question6" class="answer" data-correct="true"> X</label>
-                           	<span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
+                              <label><input type="radio" name="question6" class="answer" data-correct="true"> X</label>
+                              <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
                         
                         <p class="explanation" style="display: none;">해설 : 스티로폼은 전체가 흰 색인 것만 분리 배출이 가능하다.
@@ -141,11 +141,11 @@
             
                         <br><br>
                         
-                        	<label><input type="radio" name="question7" class="answer" data-correct="false"> O</label>
+                           <label><input type="radio" name="question7" class="answer" data-correct="false"> O</label>
                         <br>
                         <c> 
-                           	<label><input type="radio" name="question7" class="answer" data-correct="true"> X</label>
-                           	<span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
+                              <label><input type="radio" name="question7" class="answer" data-correct="true"> X</label>
+                              <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
                         
                         <p class="explanation" style="display: none;">해설 : 전단지는 표면이 코팅되어 있어 재활용이 불가하므로 일반 쓰레기로 배출해야 한다.</p>
@@ -159,11 +159,11 @@
                      
                         <br><br>
                         <c> 
-                           	<label><input type="radio" name="question8" class="answer" data-correct="true"> O</label>
-                           	<span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
+                              <label><input type="radio" name="question8" class="answer" data-correct="true"> O</label>
+                              <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
                         <br>
-                        	<label><input type="radio" name="question8" class="answer" data-correct="false"> X</label>
+                           <label><input type="radio" name="question8" class="answer" data-correct="false"> X</label>
                         
                         <p class="explanation" style="display: none;">해설 : 깨끗한 비닐류는 분리 배출 표시가 없다고 해도 재활용이 가능하다.
                         <br><strong style="color:#A9A9A9">일회용 봉투, 에어캡, 세탁소 비닐 같은 경우에도 비닐로 재활용이 가능하지만 식품포장용 '랩'은 종량제 봉투에 버려 일반 쓰레기로 배출해야 한다. </strong></p>
@@ -177,11 +177,11 @@
             
                         <br><br>
                         
-                        	<label><input type="radio" name="question9" class="answer" data-correct="false"> O</label>
+                           <label><input type="radio" name="question9" class="answer" data-correct="false"> O</label>
                         <br>
                         <c> 
-                           	<label><input type="radio" name="question9" class="answer" data-correct="true"> X</label>
-                           	<span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
+                              <label><input type="radio" name="question9" class="answer" data-correct="true"> X</label>
+                              <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
                         
                         <p class="explanation" style="display: none;">해설 : 거울은 불에 타지 않는 쓰레기이기에 크기에 따라 불연성 쓰레기 봉투(마대)에 넣어서 버려야 한다.</p>
@@ -195,11 +195,11 @@
                      
                         <br><br>
                         <c> 
-                           	<label><input type="radio" name="question8" class="answer" data-correct="true"> O</label>
-                           	<span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
+                              <label><input type="radio" name="question8" class="answer" data-correct="true"> O</label>
+                              <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
                         <br>
-                        	<label><input type="radio" name="question8" class="answer" data-correct="false"> X</label>
+                           <label><input type="radio" name="question8" class="answer" data-correct="false"> X</label>
                         
                         <p class="explanation" style="display: none;">해설 : 페트병의 라벨을 제거하고 내용물을 씻어 압축시킨 후에 다시 마개를 닫아 배출해야 한다.
                         <br><strong style="color:#A9A9A9">마개는 크기가 작아 따로 떨어질 경우 발견되지 못한 채 환경을 파괴할 수도 있어, 본체와 따로 분리되지 않도록 하는 것이 중요하다.</strong></p>
@@ -256,7 +256,7 @@
          </section>
 
          <!-- Footer -->
-		<jsp:include page="footer.jsp"></jsp:include>
+      <jsp:include page="footer.jsp"></jsp:include>
 
       </div>
 
