@@ -36,10 +36,29 @@
                 <div id="page-wrapper">
 
 
-      			<!-- Header -->
-     			<jsp:include page="header.jsp"></jsp:include>
+                    <!-- Header -->
+      				<jsp:include page="header.jsp"></jsp:include>
+   
 
-                    <div id="map" style="width: 100%; height: 700px;"></div>
+                    <div id="menu_btn">
+                        <input type="text" id="home" onkeyup="if(window.event.keyCode==13){test()}"
+                            style="border:1px solid #180e0e1c; radius background-color:#ffffff85; border-radius:5px;">
+                        <br>
+                        <button type="button" value="send" onclick="test()">현재위치 검색</button>
+                        <br>
+                        <button onclick="trash_btn()">분리수거</button>
+                        <br>
+                        <button onclick="lamp_btn()">폐형광등</button>
+                        <br>
+                        <button onclick="battery_btn()">폐건전지</button>
+                        <br>
+                        <button onclick="medicine_btn()">폐의약품</button>
+                        <br>
+                        <button onclick="clothes_btn()">의류수거함</button>
+                        <br>
+                    </div>
+
+                    <div id="map" style="width: 100%; height: 705px;"></div>
 
 
 
@@ -659,7 +678,7 @@
                         }
                     </script>
 
-        		 	<!-- Footer -->
+         			<!-- Footer -->
       				<jsp:include page="footer.jsp"></jsp:include>
 
                 </div>
