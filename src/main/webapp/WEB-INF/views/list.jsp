@@ -301,12 +301,12 @@
                             //console.log(positions)
 
                             // 마커 이미지의 이미지 주소입니다
-                            let imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+                            let imageSrc = "resources/images/green.png";
 
                             for (let i = 0; i < positions.length; i++) {
 
                                 // 마커 이미지의 이미지 크기 입니다
-                                let imageSize = new kakao.maps.Size(24, 35);
+                                let imageSize = new kakao.maps.Size(35, 35);
 
                                 // 마커 이미지를 생성합니다    
                                 let markerImage = new kakao.maps.MarkerImage(imageSrc,
@@ -371,12 +371,12 @@
                             //console.log(positions)
 
                             // 마커 이미지의 이미지 주소입니다
-                            let imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+                            let imageSrc = "resources/images/blue.png";
 
                             for (let i = 0; i < positions.length; i++) {
 
                                 // 마커 이미지의 이미지 크기 입니다
-                                let imageSize = new kakao.maps.Size(24, 35);
+                                let imageSize = new kakao.maps.Size(35, 35);
 
                                 // 마커 이미지를 생성합니다    
                                 let markerImage = new kakao.maps.MarkerImage(imageSrc,
@@ -436,12 +436,12 @@
 
                             // 마커 이미지의 이미지 주소입니다
                             //let imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-                            let imageSrc = "resources/images/medicine.png";
+                            let imageSrc = "resources/images/pink.png";
 
                             for (let i = 0; i < positions.length; i++) {
 
                                 // 마커 이미지의 이미지 크기 입니다
-                                let imageSize = new kakao.maps.Size(24, 24);
+                                let imageSize = new kakao.maps.Size(28, 28);
 
                                 // 마커 이미지를 생성합니다    
                                 let markerImage = new kakao.maps.MarkerImage(imageSrc,
