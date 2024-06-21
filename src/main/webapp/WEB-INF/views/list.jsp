@@ -230,7 +230,7 @@
                                 positions.push(position)
                             }
 
-                            let imageSrc = "resources/images/green.png";
+                            let imageSrc = "resources/images/mapgreen.png";
 
                             for (let i = 0; i < positions.length; i++) {
 
@@ -328,11 +328,11 @@
                                 positions.push(position)
                             }
 
-                            let imageSrc = "resources/images/pink.png";
+                            let imageSrc = "resources/images/mapyellow.png";
 
                             for (let i = 0; i < positions.length; i++) {
 
-                                let imageSize = new kakao.maps.Size(28, 28);
+                                let imageSize = new kakao.maps.Size(30, 30);
 
                                 let markerImage = new kakao.maps.MarkerImage(imageSrc,
                                     imageSize);
