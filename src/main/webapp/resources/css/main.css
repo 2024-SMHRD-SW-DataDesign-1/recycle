@@ -3571,7 +3571,7 @@ d {
 .upBtns {
     position: fixed;
     right: 1%;
-    bottom: 7%;
+    bottom: 5.5%;
 
     display: flex;
     align-items: center;
@@ -3580,11 +3580,11 @@ d {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: none;
-    background-color: #6699cc;
+    border: 1px solid #A9A9A9; 
+    background-color: #ffffff;
     color: #ffffff;
     font-size: 25px;
-    box-shadow: 0px 0px 5px #3973ac;
+    /* box-shadow: 0px 0px 5px #3973ac; */
     cursor: pointer;
 }
 
@@ -3600,14 +3600,18 @@ d {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: 2px solid #A9A9A9; 
+    border: 1px solid #A9A9A9; 
     background-color: #ffffff;
     color: #ffffff;
     font-size: 25px;
-    box-shadow: 0px 0px 5px #3973ac;
+    /* box-shadow: 0px 0px 5px #3973ac; */
     cursor: pointer;
 }
 
 .moveBottomBtn {
+	color: #A9A9A9
+}
+
+.moveTopBtn {
 	color: #A9A9A9
 }
