@@ -137,7 +137,7 @@
                      <br><br><br><br><br>
                      <div class="quiz">
                         <h3>[Quiz07]<br>코팅된 전단지도 종이와 함께 재활용이 가능하다.</h3>
-                        <span><img src="" width="300px" height="300px"></span>
+                        <span><img src="resources/images/smhrd_img.jpg" width="300px" height="300px"></span>
             
                         <br><br>
                         
