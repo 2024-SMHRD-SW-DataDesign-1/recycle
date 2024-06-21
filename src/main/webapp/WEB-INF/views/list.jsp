@@ -103,7 +103,7 @@
                                         position: coords
                                     });
                                     let infowindow = new kakao.maps.InfoWindow({
-                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">현재 위치</div     >'
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">현재 위치</div>'
 
                                     });
                                     infowindow.open(map, marker);
