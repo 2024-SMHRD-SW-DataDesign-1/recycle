@@ -17,17 +17,24 @@
 
                 <style type="text/css">
                     #map {
-                        margin-top: -380px;
+                        margin-top: -400px;
                     }
 
                     #menu_btn {
-                        height: 380px;
-                        width: 250px;
+                        height: 400px;
+                        width: 200px;
                     }
              
                     
                     #search{
                     	background-color: #BDBDBD;
+                    }
+                    
+                    #home{
+                    	font-size: 13px;
+                    	width : 160px;
+                    	height : 30px;
+                    	margin:15px;
                     }
                 </style>
                 
@@ -103,7 +110,7 @@
                                         position: coords
                                     });
                                     let infowindow = new kakao.maps.InfoWindow({
-                                        content: '<div style="width:150px;text-align:center;padding:6px 0;">현재 위치</div>'
+                                        content: '<div style="width:150px;text-align:center;padding:6px 0;font-size:14px;">현재 위치</div>'
 
                                     });
                                     infowindow.open(map, marker);
@@ -202,10 +209,12 @@
 
                                 trashArr1.push(marker1) 
                                 marker1.setMap(null)
-
+								let id = "infoBox" + i ;
                                 let iwContent =
-                                    '<div style="padding:5px;">' + positions[i].title + '<a href="https://map.kakao.com/link/to/' +
-                                    positions[i].title + ',' + positions[i].latlng.Ma + ',' + positions[i].latlng.La + ' "style="color:blue" target="_blank">길찾기</a>';
+                                    '<div id='+ id +'" style="padding:5px;font-size:13px;width:250px;">' +
+                                    	'<p style="margin:0; text-align: center;">'+ positions[i].title +'</p>'+
+                                    	'<a href="https://map.kakao.com/link/to/' + positions[i].title + ',' + positions[i].latlng.Ma + ',' + positions[i].latlng.La + ' "style="color:blue" target="_blank">길찾기</a>' +
+                                    '</div>';
                                 
                                 let infowindow = new kakao.maps.InfoWindow({
                                     content: iwContent,
@@ -251,8 +260,8 @@
                                 marker2.setMap(null)
 
                                 let iwContent =
-                                    '<div style="padding:5px;">' + positions[i].title + '<a href="https://map.kakao.com/link/to/' +
-                                    positions[i].title + ',' + positions[i].latlng.Ma + ',' + positions[i].latlng.La + ' "style="color:blue" target="_blank">길찾기</a>';
+                                    '<div style="padding:5px;font-size:13px;width:250px;">' + positions[i].title + '<a href="https://map.kakao.com/link/to/' +
+                                    positions[i].title + ',' + positions[i].latlng.Ma + ',' + positions[i].latlng.La + ' "style="color:blue" target="_blank"> 길찾기</a>';
 
                                 let infowindow = new kakao.maps.InfoWindow({
                                     content: iwContent,
@@ -300,7 +309,7 @@
                                 marker3.setMap(null)
 
                                let iwContent =
-                                    '<div style="padding:5px;">' + positions[i].title + '<a href="https://map.kakao.com/link/to/' +
+                                    '<div style="padding:5px;font-size:13px;width:250px;">' + positions[i].title + '<a href="https://map.kakao.com/link/to/' +
                                     positions[i].title + ',' + positions[i].latlng.Ma + ',' + positions[i].latlng.La + ' "style="color:blue" target="_blank">길찾기</a>';
 
                                 let infowindow = new kakao.maps.InfoWindow({
@@ -349,7 +358,7 @@
                                 marker4.setMap(null)
 
                                  let iwContent =
-                                    '<div style="padding:5px;">' + positions[i].title + '<a href="https://map.kakao.com/link/to/' +
+                                    '<div style="padding:5px;font-size:13px;width:250px;">' + positions[i].title + '<a href="https://map.kakao.com/link/to/' +
                                     positions[i].title + ',' + positions[i].latlng.Ma + ',' + positions[i].latlng.La + ' "style="color:blue" target="_blank">길찾기</a>';
 
 
@@ -397,7 +406,7 @@
                                 marker5.setMap(null)
 
                                  let iwContent =
-                                    '<div style="padding:5px;">' + positions[i].title + '<a href="https://map.kakao.com/link/to/' +
+                                    '<div style="padding:5px;font-size:13px;width:250px;">' + positions[i].title + '<a href="https://map.kakao.com/link/to/' +
                                     positions[i].title + ',' + positions[i].latlng.Ma + ',' + positions[i].latlng.La + ' "style="color:blue" target="_blank">길찾기</a>';
 
 
