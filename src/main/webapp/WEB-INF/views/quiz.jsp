@@ -29,13 +29,13 @@
                         <h3>[Quiz01]<br>칫솔은 플라스틱 재활용 쓰레기이다.</h3>
                         <span><img src="resources/images/toothbrush_img.png" width="300px" height="300px"></span>
 
-                        <br><br>
-                        
-                           <label><input type="radio" name="question2" class="answer" data-correct="false"> O</label>
-                        <br>
+<!--                         <br><br> -->
+
+                           <label><input type="radio" name="question1" class="answer" data-correct="false"> O</label>
+                       <!--  <br> -->
                         <c>
-                            <label><input type="radio" name="question2" class="answer" data-correct="true"> X</label>
-                            <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
+                            <label><input type="radio" name="question1" class="answer" data-correct="true"> X</label>
+                            <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong style="margin-left: -60px;">정답</strong></span>
                         </c>
                         <br>
                         <p class="explanation" style="display: none;">해설 : 칫솔은 플라스틱류가 아닌 일반 쓰레기로 분류해야 한다.
@@ -49,14 +49,14 @@
                         <h3>[Quiz02]<br>패스트푸드 음료컵의 뚜껑은 플라스틱에 포함된다.</h3>
                         <span><img src="resources/images/뚜껑.jfif" width="300px" height="300px"></span>
             
-                        <br><br>
+                        <!-- <br><br> -->
                         <c> 
-                           <label><input type="radio" name="question1" class="answer" data-correct="true"> O</label>
+                           <label><input type="radio" name="question2" class="answer" data-correct="true"> O</label>
                            <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
-                        <br>
+                        <!-- <br> -->
                      
-                            <label><input type="radio" name="question1" class="answer" data-correct="false"> X</label>
+                            <label><input type="radio" name="question2" class="answer" data-correct="false"> X</label>
                            <p class="explanation" style="display: none;">해설 : 음료컵의 뚜껑은 플라스틱으로 배출해야 한다.</p>
                      </div>
                      
@@ -66,10 +66,10 @@
                         <h3>[Quiz03]<br>고추장, 간장, 쌈장 등 장류는 음식물 쓰레기이다.</h3>
                         <span><img src="resources/images/장독대.jpg" width="300px" height="300px"></span>
             
-                        <br><br>
+                       <!--  <br><br> -->
                         
                            <label><input type="radio" name="question3"class="answer" data-correct="false"> O</label>
-                        <br>
+                       <!--  <br> -->
                         <c>
                             <label><input type="radio" name="question3" class="answer" data-correct="true"> X</label>
                             <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
@@ -84,10 +84,10 @@
                         <h3>[Quiz04]<br>깨진 유리병도 재활용이 가능하다.</h3>
                         <span><img src="resources/images/깨진유리병.jpg" width="300px" height="300px"></span>
             
-                        <br><br>
+                        <!-- <br><br> -->
                         
                            <label><input type="radio" name="question4" class="answer" data-correct="false"> O</label>
-                        <br>
+                        <!-- <br> -->
                         <c> 
                               <label><input type="radio" name="question4" class="answer" data-correct="true"> X</label>
                               <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
@@ -103,12 +103,12 @@
                         <h3>[Quiz05]<br>프링글스 통은 일반 쓰레기로 배출해야 한다.</h3>
                         <span><img src="resources/images/프링글스-통.jpg" width="300px" height="300px"></span>
                      
-                        <br><br>
+                       <!--  <br><br> -->
                         <c> 
                               <label><input type="radio" name="question5" class="answer" data-correct="true"> O</label>
                               <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
-                        <br>
+                       <!--  <br> -->
                            <label><input type="radio" name="question5" class="answer" data-correct="false"> X</label>
                         
                         <p class="explanation" style="display: none;">해설 : 프링글스 통은 부위별로 다른 재질로 구성되어 있어서 납작하게 눌러 부피를 최대한 줄인 다음 일반 쓰레기로 배출하는 것이 낫다.</p>
@@ -120,10 +120,10 @@
                         <h3>[Quiz06]<br>(무색 스티로폼과 같이) 유색 스티로폼은 분리 배출이 가능하다.</h3>
                         <span><img src="resources/images/styrofoam_img.png" width="300px" height="300px"></span>
             
-                        <br><br>
+                       <!--  <br><br> -->
                         
                            <label><input type="radio" name="question6" class="answer" data-correct="false"> O</label>
-                        <br>
+                      <!--   <br> -->
                         <c> 
                               <label><input type="radio" name="question6" class="answer" data-correct="true"> X</label>
                               <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
@@ -139,10 +139,10 @@
                         <h3>[Quiz07]<br>코팅된 전단지도 종이와 함께 재활용이 가능하다.</h3>
                         <span><img src="resources/images/smhrd_img.jpg" width="300px" height="300px"></span>
             
-                        <br><br>
+                        <!-- <br><br> -->
                         
                            <label><input type="radio" name="question7" class="answer" data-correct="false"> O</label>
-                        <br>
+                        <!-- <br> -->
                         <c> 
                               <label><input type="radio" name="question7" class="answer" data-correct="true"> X</label>
                               <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
@@ -157,12 +157,12 @@
                         <h3>[Quiz08]<br>포장용 뽁뽁이는 비닐로 분리 배출이 가능하다.</h3>
                         <span><img src="resources/images/bbogbbog_img.png" width="300px" height="300px"></span>
                      
-                        <br><br>
+                       <!--  <br><br> -->
                         <c> 
                               <label><input type="radio" name="question8" class="answer" data-correct="true"> O</label>
                               <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
-                        <br>
+                       <!--  <br> -->
                            <label><input type="radio" name="question8" class="answer" data-correct="false"> X</label>
                         
                         <p class="explanation" style="display: none;">해설 : 깨끗한 비닐류는 분리 배출 표시가 없다고 해도 재활용이 가능하다.
@@ -175,10 +175,10 @@
                         <h3>[Quiz09]<br>거울과 유리병과 접시는 분리 배출이 가능하다.</h3>
                         <span><img src="resources/images/mirror_img.png" width="300px" height="300px"></span>
             
-                        <br><br>
+                       <!--  <br><br> -->
                         
                            <label><input type="radio" name="question9" class="answer" data-correct="false"> O</label>
-                        <br>
+                        <!-- <br> -->
                         <c> 
                               <label><input type="radio" name="question9" class="answer" data-correct="true"> X</label>
                               <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
@@ -193,12 +193,12 @@
                         <h3>[Quiz10]<br>페트병의 마개는 꼭 닫아서 분리 배출해야 한다.</h3>
                         <span><img src="resources/images/pet_img.png" width="300px" height="300px"></span>
                      
-                        <br><br>
+                        <!-- <br><br> -->
                         <c> 
                               <label><input type="radio" name="question8" class="answer" data-correct="true"> O</label>
                               <span id="ans" style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong>정답</strong></span>
                         </c>
-                        <br>
+                        <!-- <br> -->
                            <label><input type="radio" name="question8" class="answer" data-correct="false"> X</label>
                         
                         <p class="explanation" style="display: none;">해설 : 페트병의 라벨을 제거하고 내용물을 씻어 압축시킨 후에 다시 마개를 닫아 배출해야 한다.
