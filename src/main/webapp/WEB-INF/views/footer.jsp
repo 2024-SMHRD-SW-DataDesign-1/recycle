@@ -13,7 +13,7 @@
 			<!-- Copyright -->
 			<div class="copyright">
 				<!-- <ul class="menu"> -->
-					<d>&copy; RE+ECHO. All rights reserved</d>
+					<d>&copy; RE+ECO. All rights reserved</d>
 				<!-- </ul> -->
 			</div>
 

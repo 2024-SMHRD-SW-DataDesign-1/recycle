@@ -12,7 +12,7 @@
 
 			<!-- Logo -->
 			<h1 style="color:#397474">
-				<a href="index" id="logo">RE+ECHO</a>
+				<a href="index" id="logo">RE+ECO</a>
 			</h1>
 
 			<!-- Nav -->
