@@ -2160,7 +2160,7 @@ label {
    line-height: 1.75em;
    margin-bottom: 0.5em;
    margin-right: 100px;
-   margin-left: 15px;
+   margin-left: 8px;
    font-size: 33px;
 }
 
@@ -3560,7 +3560,7 @@ input {
 .newClass{
 	border:4px double #006400;
 	border-radius : 10px;
-	padding-right: 21px;
+	padding-right: 17px;
     padding-top: 13px;
     padding-bottom: 5px;
 }
@@ -3621,5 +3621,11 @@ d {
 
 
 #logo:hover {
-color: #0f3d29
+color: #0f3d29;
+text-shadow: 0px 0px 4px #C0C0C0;
+
+}
+
+#nav>ul>li a:hover{
+	text-shadow: 0px 0px 1px #ffffff;
 }
