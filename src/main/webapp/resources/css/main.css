@@ -2159,6 +2159,9 @@ label {
    font-weight: 600;
    line-height: 1.75em;
    margin-bottom: 0.5em;
+   margin-right: 100px;
+   margin-left: 15px;
+   font-size: 33px;
 }
 
 ::-webkit-input-placeholder {
@@ -3557,9 +3560,9 @@ input {
 .newClass{
 	border:4px double #006400;
 	border-radius : 10px;
-	padding-right: 20px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+	padding-right: 21px;
+    padding-top: 13px;
+    padding-bottom: 5px;
 }
 
    
@@ -3614,4 +3617,9 @@ d {
 
 .moveTopBtn {
 	color: #A9A9A9
+}
+
+
+#logo:hover {
+color: #0f3d29
 }
