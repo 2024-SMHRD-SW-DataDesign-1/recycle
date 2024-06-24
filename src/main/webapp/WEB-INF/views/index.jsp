@@ -6,7 +6,7 @@
 
 <html>
 <head>
-<title>RE+ECHO</title>
+<title>RE+ECO</title>
 <meta charset="UTF-8" />
 <meta name="viewport"
    content="width=device-width, initial-scale=1, user-scalable=no" />
