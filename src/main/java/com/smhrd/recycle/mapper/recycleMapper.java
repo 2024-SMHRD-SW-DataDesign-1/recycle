@@ -12,12 +12,13 @@ import com.smhrd.recycle.model.recycle;
 public interface recycleMapper {
 	
 	// 1. 분리수거함 데이터
+	// trash 컬럼이 가지고 있는 모든 데이터를 출력
 	@Select("select * from trash")
-	public List<recycle> trashList(); // board 객체를 하나로 묶어주는 리스트임
+	public List<recycle> trashList();
 	
 	// 2. 폐형광등 데이터
 	@Select("select * from lamp")
-	public List<recycle> lampList(); // board 객체를 하나로 묶어주는 리스트임
+	public List<recycle> lampList();
 	
 	// 3. 폐건전지 데이터
 	@Select("select * from battery")

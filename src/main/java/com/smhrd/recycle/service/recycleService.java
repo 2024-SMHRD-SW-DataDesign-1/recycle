@@ -11,15 +11,14 @@ import com.smhrd.recycle.model.recycle;
 @Service
 public class recycleService {
 	
-	@Autowired //의존성 주입 : 외부에서 객체를 생성하고 싶어서...
+	@Autowired
 	recycleMapper mapper;
 
-	//homecontroller에서 리스트 만들어서 게시판에 작성된 거 다 보이게,.
+	// recyle 객체를 list 형태로 만들어 trashlist를 생성하고 mapper에 trashlist 리턴
 	public List<recycle> trashList() {
 		return mapper.trashList();
 	}
 	
-	//homecontroller에서 리스트 만들어서 게시판에 작성된 거 다 보이게,.
 	public List<recycle> lampList() {
 		return mapper.lampList();
 	}
