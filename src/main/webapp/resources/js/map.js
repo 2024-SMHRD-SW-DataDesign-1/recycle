@@ -63,9 +63,9 @@ function displayMarkers(res, type) {
         latlng: new kakao.maps.LatLng(item.latitude, item.longitude)
     }));
     let markerImageSrc = {
-        trash: 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png',
+        trash: 'resources/images/trashM.png',
         lamp: 'resources/images/mapgreen.png',
-        battery: 'resources/images/blue.png',
+        battery: 'resources/images/batteryM.png',
         medicine: 'resources/images/mapyellow.png',
         clothes: 'resources/images/clothesM2.png'
     }[type];
@@ -76,7 +76,7 @@ function displayMarkers(res, type) {
         medicine: medicineMarkers,
         clothes: clothesMarkers
     }[type];
-    let markerSize = new kakao.maps.Size(27, 30);
+    let markerSize = new kakao.maps.Size(30, 30);
 
     positions.forEach((pos, i) => {
         let marker = new kakao.maps.Marker({
@@ -120,7 +120,7 @@ function toggleMarkers(type) {
 // 지도 초기화 실행
 initializeMap();
 
-/*
+/* 간소화 전 코드
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ page session="false" %>
         <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
