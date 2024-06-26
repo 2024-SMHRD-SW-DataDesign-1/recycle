@@ -87,23 +87,30 @@ function displayMarkers(res, type) {
 	// positions를 pos라는 변수명으로 반복
     positions.forEach((pos, i) => {
         let marker = new kakao.maps.Marker({
+        	// marker에 positions에 담았던 latlng(위도, 경도), title(주소)를 담았음
             map: map,
             position: pos.latlng,
             title: pos.title,
             image: new kakao.maps.MarkerImage(markerImageSrc, markerSize)
         });
+        // markerArray(trashMarkers)에 marker값 대입
         markerArray.push(marker);
+        // 각 배열값을 가져와 마커값 설정하고 지도에 비활성화
         marker.setMap(null);
         let infowindow = new kakao.maps.InfoWindow({
+        // 인포윈도우 창에 컨텐츠 추가 -> style지정, 주소와 위도, 경도를 카카오맵 주소창에 적음 
             content: `<div style="padding:5px;font-size:13px;width:250px;">${pos.title} <a href="https://map.kakao.com/link/to/${pos.title},${pos.latlng.Ma},${pos.latlng.La}" style="color:blue" target="_blank">길찾기</a></div>`,
-            removable: true
+            removable: true //인포윈도우 x 표시
         });
 
         // 마커 클릭 이벤트 리스너 추가
+        // 마커 클릭 시 함수 실행
         kakao.maps.event.addListener(marker, 'click', function() {
+        // 만약 인포윈도우가 나와있다면 클릭했을 때
             if (infowindow.getMap()) {
                 infowindow.close(); // 인포윈도우 닫기
             } else {
+            // 인????
                 infowindow.open(map, marker); // 인포윈도우 열기
             }
         });

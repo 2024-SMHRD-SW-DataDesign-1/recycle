@@ -34,7 +34,7 @@
 								type="radio" name="question1" class="answer"
 								data-correct="false">O</label>
 							<c> <label><input type="radio" name="question1"
-								class="answer" data-correct="true"> X</label> <span id="ans"
+								class="answer" data-correct="true"> X</label> <span class="ans"
 								style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong
 								style="margin-left: -60px;">정답</strong></span> </c>
 							<br>
@@ -58,7 +58,7 @@
 								height="300px">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
 
 							<c> <label><input type="radio" name="question2"
-								class="answer" data-correct="true"> O</label> <span id="ans"
+								class="answer" data-correct="true"> O</label> <span class="ans"
 								style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong
 								style="margin-left: -60px;">정답</strong></span> </c>
 
@@ -79,7 +79,7 @@
 								type="radio" name="question3" class="answer"
 								data-correct="false"> O</label>
 							<c> <label><input type="radio" name="question3"
-								class="answer" data-correct="true"> X</label> <span id="ans"
+								class="answer" data-correct="true"> X</label> <span class="ans"
 								style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong
 								style="margin-left: -60px;">정답</strong></span> </c>
 
@@ -98,7 +98,7 @@
 								type="radio" name="question4" class="answer"
 								data-correct="false"> O</label>
 							<c> <label><input type="radio" name="question4"
-								class="answer" data-correct="true"> X</label> <span id="ans"
+								class="answer" data-correct="true"> X</label> <span class="ans"
 								style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong
 								style="margin-left: -60px;">정답</strong></span> </c>
 
@@ -119,7 +119,7 @@
 								height="300px">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
 
 							<c> <label><input type="radio" name="question5"
-								class="answer" data-correct="true"> O</label> <span id="ans"
+								class="answer" data-correct="true"> O</label> <span class="ans"
 								style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong
 								style="margin-left: -60px;">정답</strong></span> </c>
 							<label><input type="radio" name="question5"
@@ -140,7 +140,7 @@
 								type="radio" name="question6" class="answer"
 								data-correct="false"> O</label>
 							<c> <label><input type="radio" name="question6"
-								class="answer" data-correct="true"> X</label> <span id="ans"
+								class="answer" data-correct="true"> X</label> <span class="ans"
 								style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong
 								style="margin-left: -60px;">정답</strong></span> </c>
 
@@ -162,7 +162,7 @@
 								type="radio" name="question7" class="answer"
 								data-correct="false"> O</label>
 							<c> <label><input type="radio" name="question7"
-								class="answer" data-correct="true"> X</label> <span id="ans"
+								class="answer" data-correct="true"> X</label> <span class="ans"
 								style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong
 								style="margin-left: -60px;">정답</strong></span> </c>
 
@@ -180,7 +180,7 @@
 								width="300px" height="300px">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
 
 							<c> <label><input type="radio" name="question8"
-								class="answer" data-correct="true"> O</label> <span id="ans"
+								class="answer" data-correct="true"> O</label> <span class="ans"
 								style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong
 								style="margin-left: -60px;">정답</strong></span> </c>
 							<label><input type="radio" name="question8"
@@ -204,7 +204,7 @@
 								type="radio" name="question9" class="answer"
 								data-correct="false"> O</label>
 							<c> <label><input type="radio" name="question9"
-								class="answer" data-correct="true"> X</label> <span id="ans"
+								class="answer" data-correct="true"> X</label> <span class="ans"
 								style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong
 								style="margin-left: -60px;">정답</strong></span> </c>
 
@@ -222,7 +222,7 @@
 								width="300px" height="300px">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
 
 							<c> <label><input type="radio" name="question8"
-								class="answer" data-correct="true"> O</label> <span id="ans"
+								class="answer" data-correct="true"> O</label> <span class="ans"
 								style="display: none;">&nbsp&nbsp&nbsp&nbsp<strong
 								style="margin-left: -60px;">정답</strong></span> </c>
 							<label><input type="radio" name="question8"
@@ -251,16 +251,14 @@
 
                   const labels = document.querySelectorAll('label');
                   const explanations = document.querySelectorAll('.explanation');
-                  const ans = document.querySelectorAll('#ans');
+                  const ans = document.querySelectorAll('.ans');
                   
                    labels.forEach(label => {
                        const radio = label.querySelector('input');
-                       if (radio && radio.dataset.correct === "true") {
+                       if (radio.dataset.correct === "true") {
                            label.classList.add('correct', 'correct-border');
-                           label.classList.remove('incorrect', 'incorrect-border');
-                       } else if (radio && radio.dataset.correct === "false") {
+                       } else if (radio.dataset.correct === "false") {
                            label.classList.add('incorrect', 'incorrect-border');
-                           label.classList.remove('correct', 'correct-border');
                        }
                    });
 
