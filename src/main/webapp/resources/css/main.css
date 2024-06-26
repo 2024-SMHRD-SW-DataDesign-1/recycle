@@ -3580,7 +3580,6 @@ d {
     background-color: #ffffff;
     color: #ffffff;
     font-size: 25px;
-    /* box-shadow: 0px 0px 5px #3973ac; */
     cursor: pointer;
 }
 
@@ -3605,7 +3604,6 @@ d {
     background-color: #ffffff;
     color: #ffffff;
     font-size: 25px;
-    /* box-shadow: 0px 0px 5px #3973ac; */
     cursor: pointer;
 }
 
@@ -3623,4 +3621,31 @@ text-shadow: 0px 0px 4px #C0C0C0;
 
 #nav>ul>li a:hover{
 	text-shadow: 0px 0px 1px #ffffff;
+}
+
+/* 지도 스타일*/
+#map {
+    margin-top: -400px;
+}
+
+/* 메뉴 버튼 스타일*/
+#menu_btn {
+    height: 400px;
+    width: 200px;
+}
+
+/* 검색 버튼 스타일 */
+#search {
+    background-color: #BDBDBD;
+}
+
+/* 주소 입력 필드 스타일 */
+#home {
+    font-size: 13px;
+    width: 160px;
+    height: 30px;
+    margin: 15px;
+    border: 1px solid #180e0e1c;
+    background-color: #ffffff85;
+    border-radius: 5px;
 }
