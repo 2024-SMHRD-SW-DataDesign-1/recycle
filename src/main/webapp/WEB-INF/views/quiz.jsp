@@ -237,7 +237,7 @@
 
 
 						<br> <br> <br> <br> <br> <br> <br>
-						<button id="checkAnswers" onclick="test()">정답확인</button>
+						<button id="checkAnswers" onclick="check()">정답확인</button>
 
 					</article>
 
@@ -246,7 +246,7 @@
 
 			<!-- 정답확인기능 -->
 			<script type="text/javascript">
-               function test()
+               function check()
                {
 
                   const labels = document.querySelectorAll('label');

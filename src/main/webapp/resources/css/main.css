@@ -3532,23 +3532,19 @@ button.small,
     border: 2px double solid red;
  }
 
-#menu_btn{
-   position: relative;
-   top: 20px;
-   z-index: 1000;
-}
 
+/* 라디오 버튼 */
 input {
    margin: 10px;
    text-align: center;
 }
 
-.border1 {
+/* .border1 {
 	border:4px double #006400;
 	border-radius : 10px;
-}
+} */
 
-
+/* 퀴즈페이지 정답 테두리 */
 .newClass{
 	border:4px double #006400;
 	border-radius : 10px;
@@ -3558,7 +3554,7 @@ input {
 }
 
    
-   
+/* footer 로고 마진 */
 d {
 	margin-bottom: 30px
 }
@@ -3612,13 +3608,13 @@ d {
 }
 
 
-
+/* 로고 마우스 커서 */
 #logo:hover {
 color: #0f3d29;
 text-shadow: 0px 0px 4px #C0C0C0;
 
 }
-
+/* 메뉴 마우스 커서 */
 #nav>ul>li a:hover{
 	text-shadow: 0px 0px 1px #ffffff;
 }
@@ -3632,6 +3628,9 @@ text-shadow: 0px 0px 4px #C0C0C0;
 #menu_btn {
     height: 400px;
     width: 200px;
+    position: relative;
+    top: 20px;
+    z-index: 1000;
 }
 
 /* 검색 버튼 스타일 */
