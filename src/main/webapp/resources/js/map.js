@@ -57,7 +57,10 @@ function loadMarkers(type) {
 }
 
 // 마커 표시 함수
+// list.jsp에서 loadMarkers 함수가 실행되고 지정한 배열을 가져옴
 function displayMarkers(res, type) {
+	// map() 함수는 배열의 각 요소에 대해 한 번씩 콜백 함수를 호출
+	// 배열 속 요소의 변수명을 items라는 이름으로 지정
     let positions = res.map(item => ({
         title: item.address,
         latlng: new kakao.maps.LatLng(item.latitude, item.longitude)
@@ -69,6 +72,8 @@ function displayMarkers(res, type) {
         medicine: 'resources/images/mapyellow.png',
         clothes: 'resources/images/clothesM2.png'
     }[type];
+    // [type]은 브라켓 표기법. type 변수가 trash라면 markerImageSrc[type]에는 markerImageSrc[trash]와 동일
+    // markerImageSrc은 'resources/images/trashM.png'를 반환
     let markerArray = {
         trash: trashMarkers,
         lamp: lampMarkers,
@@ -76,8 +81,10 @@ function displayMarkers(res, type) {
         medicine: medicineMarkers,
         clothes: clothesMarkers
     }[type];
+    // 위에 trashMarkers 배열 선언, markerArray[type]에는 trashMarkers 반환
     let markerSize = new kakao.maps.Size(30, 30);
 
+	// positions를 pos라는 변수명으로 반복
     positions.forEach((pos, i) => {
         let marker = new kakao.maps.Marker({
             map: map,
