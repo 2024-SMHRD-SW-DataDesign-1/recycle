@@ -84,8 +84,8 @@
 * 지도
 * <h3>지도 메뉴 선택 시 처음 보이는 화면</h3>
 <img src="https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/62f491e7-836b-419b-8a9c-4001d7ac8b10">
-<h3>사용자가 사용자 현재 위치를 검색했을 때의 화면. 지도가 현재 위치로 변하는 것을 확인할 수 있는 화면</h3>
-![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/7953e474-1c86-4d88-954d-0285f4bc7537)
+<h3>사용자가 사용자 현재 위치를 검색했을 때 지도의 중심 좌표가 현재 위치로 변하는 것을 확인할 수 있는 화면</h3>
+<img src="https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/7953e474-1c86-4d88-954d-0285f4bc7537">
 <h3>원하는 수거함의 메뉴를 선택하고 원하는 곳의 마커를 선택 시, 해당하는 주소 데이터와 길찾기가 나타나는 화면</h3>
 <img src="https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/2ffbb807-5ae3-4f37-a95f-3fa6dd54d1c8">
 <h3>길찾기를 선택했을 때 선택한 마커의 주소가 도착 지점으로 설정된 것을 확인할 수 있는 화면</h3>
