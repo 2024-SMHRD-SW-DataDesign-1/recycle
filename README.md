@@ -76,12 +76,12 @@
 
 
 ## 화면 구성
-* 홈
+* <h3>홈</h3>
   ![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/1f3fab31-bff9-4105-8db4-93314873d3d5)
   ![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/525191a1-244f-4f1f-839b-ff42aedd584f)
   ![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/16910c83-eb03-4cdd-9410-fb841a12de01)
 
-* 지도
+* <h3>지도</h3>
 <h4>지도 메뉴 선택 시 처음 보이는 화면</h4>
  <img src="https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/62f491e7-836b-419b-8a9c-4001d7ac8b10">
 <h4>사용자가 사용자 현재 위치를 검색했을 때 지도의 중심 좌표가 현재 위치로 변하는 것을 확인할 수 있는 화면</h4>
@@ -91,16 +91,26 @@
 <h4>길찾기를 선택했을 때 선택한 마커의 주소가 도착 지점으로 설정된 것을 확인할 수 있는 화면</h4>
  <img src="https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/fdb81d49-3696-4bb3-8ef0-c200ed472242">
 
-* 재질별 분리배출 방법
+* <h3>재질별 분리배출 방법</h3>
  ![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/9d0407cf-e0a8-4878-b72a-d47d812fb94a)
  ![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/b1de4bde-7ccd-4bbc-836f-18e26c078497)
 
 
-* 품목별 분리배출 방법
+* <h3>품목별 분리배출 방법</h3>
   ![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/30a8d5eb-2b10-4318-b16b-232aabc16ae0)
   ![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/f7340c8b-c508-4aaf-bb7d-0d9a4e235395)
 
-* 퀴즈
+* <h3>퀴즈</h3>
+ ![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/7a44f1c6-acf7-4178-ab03-87bb842e4d9e)
+![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/21bd2bf9-e052-4f2d-a2fb-d4fe61e22be4)
+
+* 정답 확인 버튼에 click 함수를 걸고 정답과 오답에 지정색, 테두리, 해설이 나오는 화면
+![image](https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/f9622cb7-4161-4e56-92e6-a79ce656676d)
+
+
+
+
+
 
 
 ## 팀원 역할
@@ -108,6 +118,17 @@
 
 
 ## 트러블 슈팅
+* <h4>오류 코드</h4>
+ <img src="https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/82581ebf-c874-4943-b4b0-94ccca2ad9eb">
+ 
+* <h4>해결 코드</h4>
+ <img src="https://github.com/2024-SMHRD-SW-DataDesign-1/recycle/assets/109200207/d875495e-71e1-4539-923f-97d5e9003c5e">
+
+* 문제 1 : map.js 파일의 모든 변수 선언을 var로 하니 각 마커의 데이터가 반환이 안 됨.
+* 해결 방법 : 변수 선언을 let으로 다시 해줌으로써 데이터 할당이 가능해짐.
+
+***
+
 
 
 
